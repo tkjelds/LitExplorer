@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testProject", "testProject\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testProject.test", "testProject.test\testProject.test.csproj", "{FE8294B3-10E1-42C9-8161-8623D54B78DF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iLit.Core", "LitExplorer.Core\iLit.Core.csproj", "{19ED87DD-BD26-490B-BD77-A5017E2FD29D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iLit.Core", "iLit.Core\iLit.Core.csproj", "{19ED87DD-BD26-490B-BD77-A5017E2FD29D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
