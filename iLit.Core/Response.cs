@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LitExplorer.Core
+namespace iLit.Core
 {
     public enum Response
     {

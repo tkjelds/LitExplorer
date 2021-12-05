@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace LitExplorer.Core
+namespace iLit.Core
 {
     public interface INodeRepository
     {

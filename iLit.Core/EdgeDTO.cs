@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LitExplorer.Core
+namespace iLit.Core
 {
     public record EdgeDTO(int edgeID, int nodeFromID, int nodeToID);
 
