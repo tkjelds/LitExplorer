@@ -20,6 +20,11 @@ namespace iLit.Infrastructure
             throw new NotImplementedException();
         }
 
+        public string getTitle()
+        {
+            throw new NotImplementedException();
+        }
+
         public void IamNodeFrom()
         {
             throw new NotImplementedException();
