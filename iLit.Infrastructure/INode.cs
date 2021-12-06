@@ -9,6 +9,7 @@ namespace iLit.Infrastructure
     public interface INode
     {
         int getNodeID();
+        string getTitle();
         void IamNodeFrom();
 
         void IamNodeTo();

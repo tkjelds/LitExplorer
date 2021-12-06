@@ -17,7 +17,7 @@ namespace iLit.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Node>()
-                .HasIndex(n => n.Title)
+                .HasIndex(n => n.getTitle())
                 .IsUnique();
 
             modelBuilder.Entity<Edge>();
