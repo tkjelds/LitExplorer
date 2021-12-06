@@ -6,12 +6,14 @@ namespace iLit.Infrastructure
 {
     public class Node : INode
     {
+        int ID;
+        string title;
 
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string Title { get; set; }
+        public Node(string title, int ID)
+        {
+            this.title = title;
+            this.ID = ID;
+        }
 
         public int getNodeID() 
         {
