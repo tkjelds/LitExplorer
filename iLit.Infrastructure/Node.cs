@@ -17,12 +17,12 @@ namespace iLit.Infrastructure
 
         public int getNodeID() 
         {
-            throw new NotImplementedException();
+            return this.ID;
         }
 
         public string getTitle()
         {
-            throw new NotImplementedException();
+           return this.title;
         }
 
         public void IamNodeFrom()
