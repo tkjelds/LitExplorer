@@ -4,16 +4,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace iLit.Infrastructure
 {
-    public class Edge
+    public class Edge : IEdge
     {
 
-        public int Id { get; set; }
+        public int getEdgeID()
+        {
+            throw new NotImplementedException();
+        }
 
-        [Required]
-        public int fromNodeID { get; set; }
+        public int getFromNodeID()
+        {
+            throw new NotImplementedException();
+        }
 
-        [Required]
-        public int toNodeID { get; set; }
-
+        public int getToNodeID()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
