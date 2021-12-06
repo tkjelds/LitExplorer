@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace iLit.Infrastructure
 {
-    public class Node
+    public class Node : INode
     {
 
         public int Id { get; set; }
@@ -13,5 +13,19 @@ namespace iLit.Infrastructure
         [StringLength(100)]
         public string Title { get; set; }
 
+        public int getNodeID() 
+        {
+            throw new NotImplementedException();
+        }
+
+        public void IamNodeFrom()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void IamNodeTo()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
