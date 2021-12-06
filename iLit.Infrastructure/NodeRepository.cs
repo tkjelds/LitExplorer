@@ -8,22 +8,27 @@ namespace iLit.Infrastructure
 {
     public class NodeRepository : INodeRepository
     {
-        public Task<(Response Response, int nodeID)> CreateNewNode(string title)
+        public Task<(Response Response, int nodeID)> createNewNode(string title)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(Response Response, int nodeID)> DeleteNode(int ID)
+        public Task<(Response Response, int nodeID)> deleteNode(int ID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IReadOnlyCollection<NodeDTO>> GetAllNodes()
+        public Task<IReadOnlyCollection<NodeDTO>> getAllNodes()
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> NewNodeRequest(string title)
+        public Task<NodeDTO> getNode(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> newNodeRequest(string title)
         {
             throw new NotImplementedException();
         }

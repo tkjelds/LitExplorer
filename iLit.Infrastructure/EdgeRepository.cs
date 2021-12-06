@@ -9,22 +9,27 @@ namespace iLit.Infrastructure
 {
     public class EdgeRepository : IEdgeRepository
     {
-        public Task<(Response Response, int EdgeID)> CreateNewEdge(int fromNodeID, int toNodeID)
+        public Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<(Response Response, int edgeID)> DeleteEdge(int ID)
+        public Task<(Response Response, int edgeID)> deleteEdge(int ID)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IReadOnlyCollection<EdgeDTO>> GetAllEdges()
+        public Task<IReadOnlyCollection<EdgeDTO>> getAllEdges()
         {
             throw new NotImplementedException();
         }
 
-        public Task<bool> NewEdgeRequest(int fromNodeID, int toNodeID)
+        public Task<EdgeDTO> getEdge(int ID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> newEdgeRequest(int fromNodeID, int toNodeID)
         {
             throw new NotImplementedException();
         }
