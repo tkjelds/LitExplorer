@@ -18,17 +18,17 @@ namespace iLit.Infrastructure
         }
         public int getEdgeID()
         {
-            throw new NotImplementedException();
+            return edgeID;
         }
 
         public int getFromNodeID()
         {
-            throw new NotImplementedException();
+            return fromNodeID;
         }
 
         public int getToNodeID()
         {
-            throw new NotImplementedException();
+            return toNodeID;
         }
     }
 }
