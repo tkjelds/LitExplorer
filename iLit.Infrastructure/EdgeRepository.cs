@@ -9,6 +9,14 @@ namespace iLit.Infrastructure
 {
     public class EdgeRepository : IEdgeRepository
     {
+
+        private readonly iLitContext _context;
+
+        public EdgeRepository(iLitContext context)//construct user repository
+        {
+            _context = context;
+        }
+
         public Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID)
         {
             throw new NotImplementedException();
