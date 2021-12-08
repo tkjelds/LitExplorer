@@ -5,9 +5,6 @@ namespace iLit.Core
 {
     public interface INodeRepository
     {
-        /*Checks if the Node already exists and if it does sends a 
-        NodeAlreadyExistsException() else it callscreateNewNode(title).*/
-        Task<bool> newNodeRequest(string title);
 
         /*Creates an ID and creates a new Node(title, ID).*/
         Task<(Response Response, int nodeID)> createNewNode(string title);

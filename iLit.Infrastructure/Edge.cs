@@ -4,19 +4,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace iLit.Infrastructure
 {
-    public class Edge : IEdge
+    public class Edge //: IEdge
     {
-        int edgeID;
-        int fromNodeID;
-        int toNodeID;
+        public int edgeID { get; set; }
+        public int fromNodeID { get; set; }
+        public int toNodeID { get; set; }
 
-        public Edge(int edgeID, int fromNodeID, int toNodeID)
+        /*public Edge(int edgeID, int fromNodeID, int toNodeID)
         {
             this.edgeID = edgeID;
             this.fromNodeID = fromNodeID;
             this.toNodeID = toNodeID;
-        }
-        public int getEdgeID()
+        }*/
+        /*public int getEdgeID()
         {
             throw new NotImplementedException();
         }
@@ -29,6 +29,6 @@ namespace iLit.Infrastructure
         public int getToNodeID()
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

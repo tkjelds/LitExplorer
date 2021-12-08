@@ -4,35 +4,39 @@ using System.ComponentModel.DataAnnotations;
 
 namespace iLit.Infrastructure
 {
-    public class Node : INode
+    public class Node //: INode
     {
-        int ID;
-        string title;
+        public int ID { get; set; } //det er ikke nok med getNodeID - der skal være get/set metoder her, fordi man kan ikke
+        //benytter dens values i quieries, e.g 
+        [Required]
+        [StringLength(50)]
+        public string title { get; set; }
 
-        public Node(string title, int ID)
+        
+        /*public Node(string title, int? ID)
         {
             this.title = title;
             this.ID = ID;
-        }
+        }*/
 
-        public int getNodeID() 
+        /*public int getNodeID() 
         {
-            throw new NotImplementedException();
+            return ID;//can't return null
         }
 
         public string getTitle()
         {
-            throw new NotImplementedException();
+            return title;
         }
 
         public void IamNodeFrom()
         {
-            throw new NotImplementedException();
+            getNodeID();
         }
 
         public void IamNodeTo()
         {
-            throw new NotImplementedException();
-        }
+            getNodeID();
+        }*/
     }
 }
