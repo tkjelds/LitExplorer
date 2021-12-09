@@ -20,36 +20,40 @@ namespace iLit.Infrastructure
 
         public async Task<(Response Response, int nodeID)> createNewNode(string title)
         {
-            bool hasNodeAlready = _context.Nodes.Any(n => n.title == title);
-
-            if (hasNodeAlready) 
+            var newNode = new Node { title = title };
+            try
+            {
+                await _context.Nodes.AddAsync(newNode);
+                await _context.SaveChangesAsync();
+                return (Response.Created, newNode.ID);
+            } 
+            catch (DbUpdateException)
             {
                 return (Response.BadRequest, 0);
             }
-            else
-            {
-                var newNode = new Node
-                {
-                    title = title
-                };
-
-
-                _context.Nodes.Add(newNode);
-                await _context.SaveChangesAsync();
-
-                var nodeID = await getNode(newNode.ID);
-                return (Response.Created, nodeID.id);
-            }
         }
 
-        public Task<(Response Response, int nodeID)> deleteNode(int ID)
+        public async Task<(Response Response, int nodeID)> deleteNode(int ID)
         {
-            throw new NotImplementedException();
+            var node = await _context.Nodes.FindAsync(ID);
+            if (node == null)
+                return (Response.NotFound, 0);
+
+            _context.Nodes.Remove(node);
+            await _context.SaveChangesAsync();
+
+            return (Response.Deleted, ID);
         }
 
-        public Task<IReadOnlyCollection<NodeDTO>> getAllNodes()
+        public async Task<IReadOnlyCollection<NodeDTO>> getAllNodes()
         {
-            throw new NotImplementedException();
+            var nodes = await (from n in _context.Nodes
+                               select new NodeDTO
+                               (
+                                    n.ID,
+                                    n.title
+                               )).ToListAsync();
+            return nodes;
         }
 
         public async Task<NodeDTO> getNode(int ID)
@@ -58,7 +62,7 @@ namespace iLit.Infrastructure
                         where n.ID == ID
                         select new NodeDTO
                         (
-                             n.ID,
+                             ID,
                              n.title
                         )).FirstOrDefaultAsync();
             return node;
