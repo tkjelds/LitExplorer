@@ -13,7 +13,7 @@ namespace iLit.Infrastructure
 
         private readonly iLitContext _context;
         
-        public NodeRepository(iLitContext context)//construct user repository
+        public NodeRepository(iLitContext context)//construct node repository
         {
             _context = context;
         }

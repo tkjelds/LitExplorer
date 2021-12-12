@@ -18,7 +18,7 @@ namespace iLit.Infrastructure
         {
             if (!options.IsConfigured)
             {
-                options.UseSqlServer("Server=localhost;Database=iLit;User Id=sa;Password=7a304401-6bc6-401b-941b-67969841f303;Trusted_Connection=False;Encrypt=False;Integrated Security=true;");
+                options.UseSqlServer("Server=localhost;Database=iLit;User Id=sa;Password=e5ab2e23-6ac7-498b-ba0e-4f2c9698ed9a;Trusted_Connection=False;Encrypt=False");
             }
         }
 
@@ -30,9 +30,9 @@ namespace iLit.Infrastructure
 
             modelBuilder.Entity<Edge>()
                 .HasIndex(e => e.fromNodeID)
-                .IsUnique();
-                //.HasIndex(e => e.fromNodeID)
-                //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
+                .IsUnique();//En artikel kan ikke referere til sig selv.
+                            //.HasIndex(e => e.fromNodeID)
+                            //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
         }
     }
 }

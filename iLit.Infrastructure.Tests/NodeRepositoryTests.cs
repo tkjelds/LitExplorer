@@ -1,15 +1,14 @@
 using System;
-using iLit.Infrastructure;
 using iLit.Core;
 using Xunit;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.Data.Sqlite;
+using System.Threading.Tasks;
 
 namespace iLit.Infrastructure.Tests
 {
-    public class NodeRepositoryTests
+    public class NodeRepositoryTests : IDisposable
     {
 
         private readonly NodeRepository _repo;
@@ -43,7 +42,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Create_Node_From_String()
+        public async Task Create_Node_From_String()
         {
             //Arrange
             var expectedResponse = (Response.Created, 3);
@@ -60,7 +59,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Create_Node_Given_Already_Existing_Node() 
+        public async Task Create_Node_Given_Already_Existing_Node() 
         {
             //Arrange
             var expected = (Response.BadRequest, 0);
@@ -73,7 +72,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Get_Node_Given_ID()
+        public async Task Get_Node_Given_ID()
         {
             //Arrange
             var expected1 = new NodeDTO(1, "Article1" );
@@ -89,7 +88,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Get_All_Nodes()
+        public async Task Get_All_Nodes()
         {
             //Arrange
             var expected1 = new NodeDTO(1, "Article1");
@@ -104,7 +103,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Get_All_Nodes_Given_Extra_Node_Added()
+        public async Task Get_All_Nodes_Given_Extra_Node_Added()
         {
             //Arrange
             var expected1 = new NodeDTO(1, "Article1");
@@ -123,7 +122,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Delete_Node() 
+        public async Task Delete_Node() 
         {
             //Arrange
             var expected = (Response.Deleted, 2);
@@ -136,7 +135,7 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async void Delete_Node_That_Does_Not_Exist()
+        public async Task Delete_Node_That_Does_Not_Exist()
         {
             //Arrange
             var expected = (Response.NotFound, 0);
@@ -148,6 +147,27 @@ namespace iLit.Infrastructure.Tests
             Assert.Equal(expected, actual);
         }
 
+        //Rasmus code for cleaning up test.
+        private bool disposed;
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+
+                disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
     }
 }
