@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLit.API", "iLit.API\iLit.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLit.API.Tests", "iLit.API.Tests\iLit.API.Tests.csproj", "{DB19B278-4BA0-42BF-A508-7C0AD469F1CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{A935BB22-5186-4974-8BC4-68F680DA8F51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,7 @@ Global
 		{15387E5B-9980-4B3D-8325-0B1EB971C5A2}.Release|x64.Build.0 = Release|Any CPU
 		{15387E5B-9980-4B3D-8325-0B1EB971C5A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{15387E5B-9980-4B3D-8325-0B1EB971C5A2}.Release|x86.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{7F637273-31F1-467A-A812-14BF42B6CC19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F637273-31F1-467A-A812-14BF42B6CC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F637273-31F1-467A-A812-14BF42B6CC19}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -111,6 +114,20 @@ Global
 		{DB19B278-4BA0-42BF-A508-7C0AD469F1CC}.Release|x64.Build.0 = Release|Any CPU
 		{DB19B278-4BA0-42BF-A508-7C0AD469F1CC}.Release|x86.ActiveCfg = Release|Any CPU
 		{DB19B278-4BA0-42BF-A508-7C0AD469F1CC}.Release|x86.Build.0 = Release|Any CPU
+=======
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|x64.Build.0 = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Debug|x86.Build.0 = Debug|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|x64.ActiveCfg = Release|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|x64.Build.0 = Release|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|x86.ActiveCfg = Release|Any CPU
+		{A935BB22-5186-4974-8BC4-68F680DA8F51}.Release|x86.Build.0 = Release|Any CPU
+>>>>>>> b64f8fb (skabelon til popup (demo) og added til solution)
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

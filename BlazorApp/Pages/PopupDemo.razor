@@ -1,0 +1,5 @@
+@page "/popupdemo"
+@inject IModalService modal
+ 
+<h5>Click this button Show Modal Popup</h5>
+ <button @onclick="@(()=>modal.Show<FetchData>("Modal Popup Example"))" class="btn btn-primary">View</button>
