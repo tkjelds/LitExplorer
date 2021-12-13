@@ -1,0 +1,6 @@
+@page "/buttonPageDebug"
+@using BlazorApp.Data
+@inject IModalService modal
+
+<button @onclick="@(()=>modal.Show<AddNewNode>("Add new node"))" class="btn btn-primary">Add new node</button>
+<button class="btn btn-primary">Add new edge</button>
