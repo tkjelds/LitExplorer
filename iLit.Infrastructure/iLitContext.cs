@@ -28,11 +28,20 @@ namespace iLit.Infrastructure
                 .HasIndex(n => n.title)
                 .IsUnique();
 
+            modelBuilder.Entity<Edge>()
+                .HasIndex(e => new { e.fromNodeID, e.toNodeID })
+                .IsUnique();
+
+            
+
+
+
+
             /*modelBuilder.Entity<Edge>()
                 .HasIndex(e => e.fromNodeID)
                 .IsUnique();*/
-                //.HasIndex(e => e.fromNodeID)
-                //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
+            //.HasIndex(e => e.fromNodeID)
+            //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
         }
     }
 }

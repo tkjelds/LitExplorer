@@ -31,12 +31,11 @@ namespace iLit.Infrastructure.Tests
                 fromNodeID = 1,
                 toNodeID = 2
             };
-
             var edge2 = new Edge
             {
                 edgeID = 2,
-                fromNodeID = 2,
-                toNodeID = 1
+                fromNodeID = 3,
+                toNodeID = 2
             };
             context.Edges.AddRange(edge1, edge2);
 
@@ -50,7 +49,12 @@ namespace iLit.Infrastructure.Tests
                 ID = 2,
                 title = "Article2"
             };
-            context.Nodes.AddRange(node1, node2);
+            var node3 = new Node
+            {
+                ID = 3,
+                title = "Article3"
+            };
+            context.Nodes.AddRange(node1, node2, node3);
 
             context.SaveChanges();
 
@@ -65,44 +69,78 @@ namespace iLit.Infrastructure.Tests
             var expected = (Response.Created, 3);
 
             //Act
-            var actual = await _repo.createNewEdge(3, 2);
+            var actual = await _repo.createNewEdge(2, 1);
 
             //Assert
             Assert.Equal(expected, actual);
 
         }
 
-        /*public async Task Create_Edge_Given_Already_Existing_Edge(){
+        [Fact]
+        public async Task Create_Edge_Given_Already_Existing_Edge(){
+            //Arrange
+            var expected = (Response.BadRequest, 0);
 
-        }*/
+            //Act
+            var actual = await _repo.createNewEdge(1, 1);
 
-        /*public async Task Delete_Edge_Given_Valid_ID(){
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public async Task Delete_Edge_Given_Valid_ID(){
+            //Arrange
+            var expected = (Response.Deleted, 1);
 
-        }*/
+            //Act
+            var actual = await _repo.deleteEdge(1);
 
-        /*public async Task Delete_Edge_Given_Nonexistent_ID(){
+            //Assert
+            Assert.Equal(expected, actual);
 
-        }*/
+        }
+        [Fact]
+        public async Task Delete_Edge_Given_Nonexistent_ID(){
+            //Arrange
+            var expected = (Response.BadRequest, 0);
 
-        /*public async Task Read_Edge_Given_Valid_ID(){
+            //Act
+            var actual = await _repo.deleteEdge(10);
 
-        }*/
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public async Task Get_Edge_Given_Valid_ID(){
+            //Arrange
+            var expected = new EdgeDTO(1, 1, 2);
 
-        /*public async Task Read_Edge_Given_Nonexistent_ID(){
+            //Act
+            var actual = await _repo.getEdge(1);
 
-        }*/
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public async Task Get_Edge_Given_Nonexistent_ID(){
+            //Act
+            var actual = await _repo.getEdge(10);
 
-        /*public async Task Get_All_Edges(){
+            //Assert
+            Assert.Null(actual);
+        }
 
-        }*/
+        [Fact]
+        public async Task Get_All_Edges(){
+            //Act
+            var edges = await _repo.getAllEdges();
 
-        /*public async Task Get_Edge_Given_Valid_ID(){
-
-        }*/
-
-        /*public async Task Get_Edge_Given_Nonexistent_ID(){
-
-        }*/
-
+            //Assert
+            Assert.Collection(edges,
+                e => Assert.Equal(new EdgeDTO(1, 1, 2), e),
+                e => Assert.Equal(new EdgeDTO(2, 3, 2), e)
+            );
+        }
     }
 }

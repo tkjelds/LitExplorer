@@ -9,7 +9,7 @@ namespace iLit.Core
         If it doesn’t, the createNewEdge(fromNodeID,toNodeID) is called, 
         else it returns an EdgeAlreadyExistsException() if it exist or 
         EdgesNeedsTwoNodesEx-ception() if fromNodeID = toNodeID.*/
-        Task<bool> newEdgeRequest(int fromNodeID, int toNodeID);
+        //Task<bool> newEdgeRequest(int fromNodeID, int toNodeID);
 
         /*Creates a new Edge(int, int).*/
         Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID);
