@@ -14,6 +14,7 @@ namespace BlazorApp
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+            builder.Services.AddBlazoredModal();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
