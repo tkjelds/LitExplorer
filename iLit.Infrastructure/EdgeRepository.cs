@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iLit.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace iLit.Infrastructure
 {
@@ -17,29 +18,69 @@ namespace iLit.Infrastructure
             _context = context;
         }
 
-        public Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID)
+        public async Task<(Response Response, int EdgeID)> createNewEdge(int fromID, int toID)
         {
-            throw new NotImplementedException();
+            if(fromID == toID)
+            {
+                return (Response.BadRequest, 0);
+            }
+            var edge = new Edge
+            {
+                fromNodeID = fromID,
+                toNodeID = toID
+            };
+            try
+            {
+                await _context.Edges.AddAsync(edge);
+                await _context.SaveChangesAsync();
+                return (Response.Created, edge.edgeID);
+            }
+            catch(DbUpdateException)
+            {
+                return (Response.BadRequest, 0);
+            }
+            
         }
 
-        public Task<(Response Response, int edgeID)> deleteEdge(int ID)
+        public async Task<(Response Response, int edgeID)> deleteEdge(int ID)
         {
-            throw new NotImplementedException();
+            var edge = await _context.Edges.FindAsync(ID);
+
+            if(edge == null)
+            {
+                return (Response.BadRequest, 0);
+            }
+
+            _context.Edges.Remove(edge);
+            await _context.SaveChangesAsync();
+            return (Response.Deleted, ID);
         }
 
-        public Task<IReadOnlyCollection<EdgeDTO>> getAllEdges()
+        public async Task<IReadOnlyCollection<EdgeDTO>> getAllEdges()
         {
-            throw new NotImplementedException();
+            var edges = await (from e in _context.Edges
+                               select new EdgeDTO
+                               (
+                                   e.edgeID,
+                                   e.fromNodeID,
+                                   e.toNodeID
+                                   )).ToListAsync();
+            return edges;
         }
 
-        public Task<EdgeDTO> getEdge(int ID)
+        // TODO: Check for nonexisting edge with option type.
+        public async Task<EdgeDTO> getEdge(int ID)
         {
-            throw new NotImplementedException();
-        }
+            var edge = await (from e in _context.Edges
+                              where e.edgeID == ID
+                              select new EdgeDTO
+                              (
+                                 ID,
+                                 e.fromNodeID,
+                                 e.toNodeID
+                                 )).FirstOrDefaultAsync();
 
-        public Task<bool> newEdgeRequest(int fromNodeID, int toNodeID)
-        {
-            throw new NotImplementedException();
+            return edge;
         }
     }
 }

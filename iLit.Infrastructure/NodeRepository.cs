@@ -20,6 +20,7 @@ namespace iLit.Infrastructure
 
         public async Task<(Response Response, int nodeID)> createNewNode(string title)
         {
+
             var newNode = new Node { title = title };
             try
             {
@@ -31,6 +32,7 @@ namespace iLit.Infrastructure
             {
                 return (Response.BadRequest, 0);
             }
+
         }
 
         public async Task<(Response Response, int nodeID)> deleteNode(int ID)

@@ -33,9 +33,6 @@ namespace iLit.Infrastructure.Migrations
 
                     b.HasKey("edgeID");
 
-                    b.HasIndex("fromNodeID")
-                        .IsUnique();
-
                     b.ToTable("Edges");
                 });
 

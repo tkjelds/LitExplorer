@@ -29,10 +29,8 @@ namespace iLit.Infrastructure
                 .IsUnique();
 
             modelBuilder.Entity<Edge>()
-                .HasIndex(e => e.fromNodeID)
-                .IsUnique();//En artikel kan ikke referere til sig selv.
-                            //.HasIndex(e => e.fromNodeID)
-                            //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
+                .HasIndex(e => new { e.fromNodeID, e.toNodeID })
+                .IsUnique();
         }
     }
 }

@@ -9,8 +9,8 @@ using iLit.Infrastructure;
 namespace iLit.Infrastructure.Migrations
 {
     [DbContext(typeof(iLitContext))]
-    [Migration("20211208102320_Initial")]
-    partial class Initial
+    [Migration("20211213110710_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,9 +34,6 @@ namespace iLit.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("edgeID");
-
-                    b.HasIndex("fromNodeID")
-                        .IsUnique();
 
                     b.ToTable("Edges");
                 });
