@@ -41,30 +41,5 @@ namespace iLit.Infrastructure.Tests
             _context = context;
             _repo = new NodeRepository(_context);
         }
-
-        [Fact]
-        public async void Create_Node_From_String()
-        {
-            //Arrange
-            var expectedResponse = (Response.Created, 3);
-            var expectedNode = new NodeDTO(3, "Article3");
-
-            //Act
-            var actualResponse = await _repo.createNewNode("Article3");
-            var actualNode = await _repo.getNode(3);
-
-            //Assert
-            Assert.Equal(expectedResponse, actualResponse);
-            Assert.Equal(expectedNode, actualNode);
-
-        }
-
-        /*[Fact]
-        public async void Create_Node_Given_Already_Existing_Node(){
-            var expected = (Response.BadRequest, 0);
-            var actual = await _repo.createNewNode("Article1");
-
-            Assert.Equal(expected, actual);
-        }*/
     }
 }

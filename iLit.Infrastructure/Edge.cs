@@ -7,7 +7,9 @@ namespace iLit.Infrastructure
     public class Edge //: IEdge
     {
         public int edgeID { get; set; }
+        [Required]
         public int fromNodeID { get; set; }
+        [Required]
         public int toNodeID { get; set; }
 
         /*public Edge(int edgeID, int fromNodeID, int toNodeID)

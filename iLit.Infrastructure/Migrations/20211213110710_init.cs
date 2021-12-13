@@ -2,7 +2,7 @@
 
 namespace iLit.Infrastructure.Migrations
 {
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,12 +32,6 @@ namespace iLit.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Nodes", x => x.ID);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Edges_fromNodeID",
-                table: "Edges",
-                column: "fromNodeID",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Nodes_title",

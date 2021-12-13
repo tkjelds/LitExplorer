@@ -18,28 +18,9 @@ namespace iLit.Infrastructure
             _context = context;
         }
 
-        public async Task<(Response Response, int nodeID)> createNewNode(string title)
+        public Task<(Response Response, int nodeID)> createNewNode(string title)
         {
-            bool hasNodeAlready = _context.Nodes.Any(n => n.title == title);
-
-            if (hasNodeAlready) 
-            {
-                return (Response.BadRequest, 0);
-            }
-            else
-            {
-                var newNode = new Node
-                {
-                    title = title
-                };
-
-
-                _context.Nodes.Add(newNode);
-                await _context.SaveChangesAsync();
-
-                var nodeID = await getNode(newNode.ID);
-                return (Response.Created, nodeID.id);
-            }
+            throw new NotImplementedException();
         }
 
         public Task<(Response Response, int nodeID)> deleteNode(int ID)

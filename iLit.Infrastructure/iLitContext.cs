@@ -28,9 +28,9 @@ namespace iLit.Infrastructure
                 .HasIndex(n => n.title)
                 .IsUnique();
 
-            modelBuilder.Entity<Edge>()
+            /*modelBuilder.Entity<Edge>()
                 .HasIndex(e => e.fromNodeID)
-                .IsUnique();
+                .IsUnique();*/
                 //.HasIndex(e => e.fromNodeID)
                 //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
         }

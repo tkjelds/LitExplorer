@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iLit.Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace iLit.Infrastructure
 {
@@ -17,9 +18,18 @@ namespace iLit.Infrastructure
             _context = context;
         }
 
-        public Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID)
+        public async Task<(Response Response, int EdgeID)> createNewEdge(int fromID, int toID)
         {
-            throw new NotImplementedException();
+            var edge = new Edge
+            {
+                fromNodeID = fromID,
+                toNodeID = toID
+            };
+
+            await _context.Edges.AddAsync(edge);
+            await _context.SaveChangesAsync();
+            return (Response.Created, edge.edgeID);
+            
         }
 
         public Task<(Response Response, int edgeID)> deleteEdge(int ID)
