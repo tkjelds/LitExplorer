@@ -9,20 +9,28 @@ namespace iLit.Infrastructure
         public DbSet<Node> Nodes { get; set; }
         public DbSet<Edge> Edges { get; set; }
 
-
+        public iLitContext() { }
         public iLitContext(DbContextOptions<iLitContext> options) : base(options)
         {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            if (!options.IsConfigured)
+            {
+                options.UseSqlServer("Server=localhost;Database=iLit;User Id=sa;Password=e5ab2e23-6ac7-498b-ba0e-4f2c9698ed9a;Trusted_Connection=False;Encrypt=False");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Node>()
-                .HasIndex(n => n.getTitle())
+                .HasIndex(n => n.title)
                 .IsUnique();
 
-            modelBuilder.Entity<Edge>();
-                //.HasIndex(e => e.fromNodeID)
-                //Skal artikler kunne referere til hinanden, eller er det en ensrettet relation?
+            modelBuilder.Entity<Edge>()
+                .HasIndex(e => new { e.fromNodeID, e.toNodeID })
+                .IsUnique();
         }
     }
 }

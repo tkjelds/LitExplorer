@@ -4,28 +4,70 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iLit.Core;
+using Microsoft.EntityFrameworkCore;
+
 namespace iLit.Infrastructure
 {
     public class NodeRepository : INodeRepository
     {
-        public Task<(Response Response, int nodeID)> CreateNewNode(string title)
+
+        private readonly iLitContext _context;
+        
+        public NodeRepository(iLitContext context)//construct node repository
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<(Response Response, int nodeID)> DeleteNode(int ID)
+        public async Task<(Response Response, int nodeID)> createNewNode(string title)
         {
-            throw new NotImplementedException();
+
+            var newNode = new Node { title = title };
+            try
+            {
+                await _context.Nodes.AddAsync(newNode);
+                await _context.SaveChangesAsync();
+                return (Response.Created, newNode.ID);
+            } 
+            catch (DbUpdateException)
+            {
+                return (Response.BadRequest, 0);
+            }
+
         }
 
-        public Task<IReadOnlyCollection<NodeDTO>> GetAllNodes()
+        public async Task<(Response Response, int nodeID)> deleteNode(int ID)
         {
-            throw new NotImplementedException();
+            var node = await _context.Nodes.FindAsync(ID);
+            if (node == null)
+                return (Response.NotFound, 0);
+
+            _context.Nodes.Remove(node);
+            await _context.SaveChangesAsync();
+
+            return (Response.Deleted, ID);
         }
 
-        public Task<bool> NewNodeRequest(string title)
+        public async Task<IReadOnlyCollection<NodeDTO>> getAllNodes()
         {
-            throw new NotImplementedException();
+            var nodes = await (from n in _context.Nodes
+                               select new NodeDTO
+                               (
+                                    n.ID,
+                                    n.title
+                               )).ToListAsync();
+            return nodes;
+        }
+
+        public async Task<NodeDTO> getNode(int ID)
+        {
+            var node = await (from n in _context.Nodes
+                        where n.ID == ID
+                        select new NodeDTO
+                        (
+                             ID,
+                             n.title
+                        )).FirstOrDefaultAsync();
+            return node;
         }
     }
 }
