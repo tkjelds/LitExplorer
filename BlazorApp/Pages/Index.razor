@@ -1,7 +1,24 @@
 @page "/"
-
+@inject IModalService modal
 
 <Circle></Circle>
 
-<button class="oi oi-plus"></button>
+<button @onclick="ShowModal" class="butt" style="background-color:violet">+</button>
+<style>
+    .butt {
+        width: 60px;
+        height: 60px;
+        color: black;
+        font-size: 300%;
+        font-style: bold;
+    }
+</style>
 
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; }
+    async Task ShowModal()
+    {
+        var addNewModal = Modal.Show<ModalButtonPage>("Add new node or edge");
+        
+    }
+}

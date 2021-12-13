@@ -1,0 +1,38 @@
+@page "/addNewNodeDebug"
+@using BlazorApp.Data
+<div class ="inputs">
+    <input type="text" @bind:event="oninput" placeholder="Insert title here" @bind="Title"/>
+    <input type="text" @bind:event="oninput" placeholder="Insert release year here in format YYYY" @bind="Release" />
+    <button class="btn btn-primary" @onclick="(() => newEntity())">Add new node</button>
+    <br>
+    "@Title",   
+    @Release
+</div>
+
+
+
+
+@code {
+    public string Title {get; set;}
+    public string Release {get; set;}
+
+    private void newEntity() {
+        //Parsing of the "Title" input field when the Add button is pressed
+        if(!string.IsNullOrWhiteSpace(Title)) {
+            //Title is nonempty
+            var title = Title;
+            }
+
+        //Parsing of the "Release" input field when the Add button is pressed. Only parses 
+        int number;
+        bool success = int.TryParse(Release, out number);
+        if(success) {
+            //successful. number has correct release year. can now create database object
+            var year = number;
+        }
+
+        //Something something update database with title and year
+
+
+    }
+}
