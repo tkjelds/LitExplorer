@@ -14,14 +14,13 @@ namespace iLit.Infrastructure
         {
         }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder options)
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             if (!options.IsConfigured)
             {
-                options.UseSqlServer();
-                old connection string (later deleted, part of user secrets now. Server=localhost;Database=iLit;User Id=sa;Password=e5ab2e23-6ac7-498b-ba0e-4f2c9698ed9a;Trusted_Connection=False;Encrypt=False
+                options.UseSqlServer("Server=localhost;Database=iLit;User Id=sa;Password=e5ab2e23-6ac7-498b-ba0e-4f2c9698ed9a;Trusted_Connection=False;Encrypt=False");
             }
-        }*/
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +31,10 @@ namespace iLit.Infrastructure
             modelBuilder.Entity<Edge>()
                 .HasIndex(e => new { e.fromNodeID, e.toNodeID })
                 .IsUnique();
+
+            modelBuilder.Entity<Edge>(e =>
+                e.HasCheckConstraint("CK_Edge_From_To_ID", "[fromNodeID] != [toNodeID]")
+                );
         }
     }
 }

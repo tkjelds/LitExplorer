@@ -33,7 +33,12 @@ namespace iLit.Infrastructure.Migrations
 
                     b.HasKey("edgeID");
 
+                    b.HasIndex("fromNodeID", "toNodeID")
+                        .IsUnique();
+
                     b.ToTable("Edges");
+
+                    b.HasCheckConstraint("CK_Edge_From_To_ID", "[fromNodeID] != [toNodeID]");
                 });
 
             modelBuilder.Entity("iLit.Infrastructure.Node", b =>
