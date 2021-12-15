@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using iLit.Infrastructure;
 using iLit.Core;
 using Microsoft.Extensions.Logging;
+using iLit.API;
+using static iLit.API.Extensions;
 
 namespace iLit.API.Controllers
 {
@@ -23,6 +25,23 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
+        public Task<CreatedAtActionResult> Post(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet]
+        public async Task<IReadOnlyCollection<NodeDTO>> Get()
+        {
+            return await _repository.getAllNodes();
+        }
+
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(NodeDTO), StatusCodes.Status200OK)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<NodeDTO>> Get(int id)
+            => (await _repository.getNode(id)).ToActionResult();
+        
     }
 
 }

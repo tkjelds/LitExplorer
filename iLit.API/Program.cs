@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace iLit.API
@@ -27,5 +28,6 @@ namespace iLit.API
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        //configureappconfiguration - to expose/use secrets from folder/text file in linux. optional on windows?
     }
 }

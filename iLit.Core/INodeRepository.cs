@@ -16,6 +16,6 @@ namespace iLit.Core
         Task<IReadOnlyCollection<NodeDTO>> getAllNodes();
 
         /*Returns a Node.*/
-        Task<NodeDTO> getNode(int ID);
+        Task<Option<NodeDTO>> getNode(int ID);
     }
 }
