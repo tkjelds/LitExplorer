@@ -58,7 +58,7 @@ namespace iLit.Infrastructure
             return nodes;
         }
 
-        public async Task<NodeDTO> getNode(int ID)
+        public async Task<Option<NodeDTO>> getNode(int ID)
         {
             var node = await (from n in _context.Nodes
                         where n.ID == ID

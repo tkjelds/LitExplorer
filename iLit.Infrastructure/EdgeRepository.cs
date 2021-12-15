@@ -20,10 +20,6 @@ namespace iLit.Infrastructure
 
         public async Task<(Response Response, int EdgeID)> createNewEdge(int fromID, int toID)
         {
-            if(fromID == toID)
-            {
-                return (Response.BadRequest, 0);
-            }
             var edge = new Edge
             {
                 fromNodeID = fromID,

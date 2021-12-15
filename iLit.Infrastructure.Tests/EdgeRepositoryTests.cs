@@ -77,7 +77,20 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async Task Create_Edge_Given_Already_Existing_Edge(){
+        public async Task Create_Edge_Given_Already_Existing_Edge()
+        {
+            //Arrange
+            var expected = (Response.BadRequest, 0);
+
+            //Act
+            var actual = await _repo.createNewEdge(1, 2);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public async Task Create_Edge_Given_Identical_From_And_To_Node_ID()
+        {
             //Arrange
             var expected = (Response.BadRequest, 0);
 
@@ -88,7 +101,8 @@ namespace iLit.Infrastructure.Tests
             Assert.Equal(expected, actual);
         }
         [Fact]
-        public async Task Delete_Edge_Given_Valid_ID(){
+        public async Task Delete_Edge_Given_Valid_ID()
+        {
             //Arrange
             var expected = (Response.Deleted, 1);
 
@@ -100,7 +114,8 @@ namespace iLit.Infrastructure.Tests
 
         }
         [Fact]
-        public async Task Delete_Edge_Given_Nonexistent_ID(){
+        public async Task Delete_Edge_Given_Nonexistent_ID()
+        {
             //Arrange
             var expected = (Response.BadRequest, 0);
 
@@ -110,9 +125,10 @@ namespace iLit.Infrastructure.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
-        public async Task Get_Edge_Given_Valid_ID(){
+        public async Task Get_Edge_Given_Valid_ID()
+        {
             //Arrange
             var expected = new EdgeDTO(1, 1, 2);
 
@@ -123,7 +139,8 @@ namespace iLit.Infrastructure.Tests
             Assert.Equal(expected, actual);
         }
         [Fact]
-        public async Task Get_Edge_Given_Nonexistent_ID(){
+        public async Task Get_Edge_Given_Nonexistent_ID()
+        {
             //Act
             var actual = await _repo.getEdge(10);
 
@@ -132,7 +149,8 @@ namespace iLit.Infrastructure.Tests
         }
 
         [Fact]
-        public async Task Get_All_Edges(){
+        public async Task Get_All_Edges()
+        {
             //Act
             var edges = await _repo.getAllEdges();
 

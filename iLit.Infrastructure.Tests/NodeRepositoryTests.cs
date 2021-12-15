@@ -54,7 +54,7 @@ namespace iLit.Infrastructure.Tests
 
             //Assert
             Assert.Equal(expectedResponse, actualResponse);
-            Assert.Equal(expectedNode, actualNode);
+            Assert.Equal(expectedNode, actualNode.Value);
 
         }
 
@@ -83,8 +83,8 @@ namespace iLit.Infrastructure.Tests
             var actual2 = await _repo.getNode(2);
 
             //Assert
-            Assert.Equal(expected1, actual1);
-            Assert.Equal(expected2, actual2);
+            Assert.Equal(expected1, actual1.Value);
+            Assert.Equal(expected2, actual2.Value);
         }
 
         [Fact]

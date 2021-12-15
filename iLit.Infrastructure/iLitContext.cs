@@ -31,6 +31,10 @@ namespace iLit.Infrastructure
             modelBuilder.Entity<Edge>()
                 .HasIndex(e => new { e.fromNodeID, e.toNodeID })
                 .IsUnique();
+
+            modelBuilder.Entity<Edge>(e =>
+                e.HasCheckConstraint("CK_Edge_From_To_ID", "[fromNodeID] != [toNodeID]")
+                );
         }
     }
 }

@@ -18,6 +18,7 @@ namespace iLit.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Edges", x => x.edgeID);
+                    table.CheckConstraint("CK_Edge_From_To_ID", "[fromNodeID] != [toNodeID]");
                 });
 
             migrationBuilder.CreateTable(
@@ -32,6 +33,12 @@ namespace iLit.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Nodes", x => x.ID);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Edges_fromNodeID_toNodeID",
+                table: "Edges",
+                columns: new[] { "fromNodeID", "toNodeID" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Nodes_title",
