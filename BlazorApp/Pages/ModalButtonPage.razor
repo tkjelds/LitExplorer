@@ -2,5 +2,20 @@
 @using BlazorApp.Data
 @inject IModalService modal
 
-<button @onclick="@(()=>modal.Show<AddNewNode>("Add new node"))" class="btn btn-primary">Add new node</button>
-<button class="btn btn-primary">Add new edge</button>
+<RadzenButton Click=@(args =>ShowModalNode()) Text="Add New Node" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" />
+<RadzenButton Click=@(args =>ShowModalEdge()) Text="Add New Edge" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" />
+    
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; }   
+    async Task ShowModalNode()
+    {
+        var addNewModal = Modal.Show<AddNewNode>("Add new node");
+        
+    }
+
+    async Task ShowModalEdge()
+    {
+        var addNewModal = Modal.Show<AddNewEdge>("Add new edge");
+        
+    }
+}
