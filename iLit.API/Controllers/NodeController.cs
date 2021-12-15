@@ -25,10 +25,14 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
-        public Task<CreatedAtActionResult> Post(string title)
+        /*[HttpPost]
+        [ProducesResponseType(typeof(int), 201)]
+        public Task<IActionResult> Post(string title)
         {
-            throw new NotImplementedException();
-        }
+            var result = _repository.createNewNode(title);
+
+            return result.Result.Response == Core.Response.BadRequest ? CreatedAtAction(nameof(Get), result.Result.nodeID, result) : 2
+        }*/
 
         [HttpGet]
         public async Task<IReadOnlyCollection<NodeDTO>> Get()
