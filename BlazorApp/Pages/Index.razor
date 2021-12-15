@@ -2,20 +2,10 @@
 @inject IModalService modal
 
 <Circle></Circle>
-
-<button @onclick="ShowModal" class="butt" style="background-color:violet">+</button>
-<style>
-    .butt {
-        width: 60px;
-        height: 60px;
-        color: black;
-        font-size: 300%;
-        font-style: bold;
-    }
-</style>
+<RadzenButton Click=@(args =>ShowModal()) Text="Add New" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" />
 
 @code {
-    [CascadingParameter] public IModalService Modal { get; set; }
+    [CascadingParameter] public IModalService Modal { get; set; }   
     async Task ShowModal()
     {
         var addNewModal = Modal.Show<ModalButtonPage>("Add new node or edge");
