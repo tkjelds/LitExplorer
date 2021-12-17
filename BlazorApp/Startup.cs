@@ -31,10 +31,15 @@ namespace BlazorApp
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddBlazoredModal();
-            services.AddHttpClient("iLit", httpClient =>
+            /*services.AddHttpClient("MyApp.Server", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
+                            .AddHttpMessageHandler<BaseAddressAuthorizationMessageHandler>();
+            services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("MyApp.Server"));
+            services.AddMsalAuthentication(options =>
                 {
-                    httpClient.BaseAddress = new Uri("https://api.github.com/");
-                }); 
+                    builder.Configuration.Bind("AzureAd", options.ProviderOptions.Authentication);
+                    options.ProviderOptions.DefaultAccessTokenScopes.Add("api://8bfdad82-6c9e-41a2-bd1a-83d65103e5e1/API.Access");
+                    options.UserOptions.RoleClaim = "appRole";
+                }); */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
