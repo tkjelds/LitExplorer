@@ -18,33 +18,40 @@ namespace iLit.Infrastructure
             _context = context;
         }
 
-        public async Task<(Response Response, int nodeID)> createNewNode(string title)
+        public async Task<NodeDTO> createNewNode(NodeCreateDTO newNode)
         {
 
-            var newNode = new Node { title = title };
+            var node = new Node { title = newNode.title };
             try
             {
-                await _context.Nodes.AddAsync(newNode);
+                await _context.Nodes.AddAsync(node);
                 await _context.SaveChangesAsync();
-                return (Response.Created, newNode.ID);
+                return new NodeDTO(node.ID, node.title);
             } 
             catch (DbUpdateException)
             {
-                return (Response.BadRequest, 0);
+                return null; //kan håndteres af nodecontroller.
             }
 
         }
 
-        public async Task<(Response Response, int nodeID)> deleteNode(int ID)
+        public async Task<Response> deleteNode(int ID)
         {
             var node = await _context.Nodes.FindAsync(ID);
             if (node == null)
-                return (Response.NotFound, 0);
+                return Response.NotFound;
 
             _context.Nodes.Remove(node);
             await _context.SaveChangesAsync();
 
-            return (Response.Deleted, ID);
+            var edgeRepo = new EdgeRepository(_context);
+            var response = await edgeRepo.deleteEdgesGivenNodeId(ID);
+
+            if(response == Response.NotFound)
+            {
+                return Response.Deleted;
+            }
+            return Response.Deleted;
         }
 
         public async Task<IReadOnlyCollection<NodeDTO>> getAllNodes()

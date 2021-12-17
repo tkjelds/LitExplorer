@@ -8,9 +8,9 @@ namespace iLit.Core
     public record EdgeCreateDTO
     {
         [Required]
-        public int nodeFromID { get; init; }
+        public int nodeFromID { get; set; }
 
         [Required]
-        public int nodeToID { get; init; }
+        public int nodeToID { get; set; }
     }
 }
