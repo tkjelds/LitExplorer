@@ -1,14 +1,17 @@
 @page "/addNewNodeDebug"
-@using System.Text.Json
-@using System.Text.Json.Serialization;
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
-<div class ="inputs">
-    <input type="text" @bind:event="oninput" placeholder="Insert title here" @bind="title"/>
-    <button class="btn btn-success">Add new node</button>
-    <br>
-    "@title"
-</div>
+<h1>Characters</h1>
 
+<EditForm Model ="@node" OnValidSubmit="@doNothing"> 
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form group">
+        <label for="NodeTitle">Title</label>
+        <InputText id="Title" @bind-Value="node.Title" class="form-control" />
+    </div>
+</EditForm>
 
 
 
@@ -17,26 +20,18 @@
 
 
 @code {
-    public string title {get; set;}
+    private NodeCreateDTO node = new();
 
-    private void newEntity() {
-        //Parsing of the "Title" input field when the Add button is pressed
-        if(!string.IsNullOrWhiteSpace(title)) {
-            //Title is nonempty
-            var tempTitle = title;
-            var node = new Node();
-            node.name = tempTitle;
-            }
-
-        //Something something update database with title
-        /*var request = new HttpRequestMessage(HttpMethod.Post,
-            ">>API<<", title);*/
-
-
+    private void doNothing() {
+        //nothing
     }
-
-    public class Node {
-        [JsonPropertyName("name")]
-        public string name { get; set; }
-    }
+    private async Task HandleValidSubmit() {
+       /* var response = await Http.PostAsJsonAsync("api/Nodes", node);*/
+        /*
+        if (response.IsSuccessStatusCode) {
+            Console.WriteLine("Succes!");
+        } else {
+            Console.WriteLine("Oh no it failed!");
+        }*/
+    } 
 }
