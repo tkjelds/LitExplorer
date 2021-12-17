@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace iLit.Infrastructure.Tests
 {
-    public class EdgeRepositoryTests
+    public class EdgeRepositoryTests : IDisposable
     {
         private readonly EdgeRepository _repo;
         private readonly iLitContext _context;
@@ -119,7 +119,7 @@ namespace iLit.Infrastructure.Tests
         public async Task Delete_Edge_Given_Nonexistent_ID()
         {
             //Arrange
-            var expected = Response.BadRequest;
+            var expected = Response.NotFound;
 
             //Act
             var actual = await _repo.deleteEdge(10);

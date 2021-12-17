@@ -27,7 +27,7 @@ namespace iLit.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(NodeDTO), 201)]
-        [ProducesResponseType(null, 400)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(NodeCreateDTO newNode)
         {
             var result = await _repository.createNewNode(newNode);

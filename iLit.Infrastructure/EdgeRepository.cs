@@ -44,7 +44,7 @@ namespace iLit.Infrastructure
 
             if(edge == null)
             {
-                return Response.BadRequest;
+                return Response.NotFound;
             }
 
             _context.Edges.Remove(edge);

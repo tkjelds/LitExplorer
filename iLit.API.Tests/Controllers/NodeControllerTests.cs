@@ -5,7 +5,6 @@ using iLit.API.Controllers;
 using iLit.Core;
 using Xunit;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using System;
 
 namespace iLit.API.Tests.Controllers
