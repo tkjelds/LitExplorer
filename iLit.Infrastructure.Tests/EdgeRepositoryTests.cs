@@ -175,6 +175,19 @@ namespace iLit.Infrastructure.Tests
             Assert.Empty(result);
         }
 
+        [Fact]
+        public async Task Delete_Node_With_Single_Edge_Connected_To_It_And_Check_For_Remaning_Edge()
+        {
+            //Arrange
+            var nodeRepo = new NodeRepository(_context);
+            var expected = new EdgeDTO(1, 1, 2);
+            //Act
+            await nodeRepo.deleteNode(3);
+            var result = await _repo.getAllEdges();
+            //Assert
+            Assert.Equal(expected, result.ElementAt(0));
+        }
+
         //Rasmus code for cleaning up test.
         private bool disposed;
 

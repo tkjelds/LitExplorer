@@ -2,7 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using iLit.Core;
-
+//Credit to Rasmus Lystrøm for the implementation of this Extension class for API's
+//rnie@itu.dk
 namespace iLit.API
 {
 
@@ -14,6 +15,7 @@ namespace iLit.API
             Deleted => new NoContentResult(),
             NotFound => new NotFoundResult(),
             Conflict => new ConflictResult(),
+            BadRequest => new BadRequestResult(),
             _ => throw new NotSupportedException($"{response} not supported")
         };
 

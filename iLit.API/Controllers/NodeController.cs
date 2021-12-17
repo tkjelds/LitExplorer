@@ -25,14 +25,20 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
-        /*[HttpPost]
-        [ProducesResponseType(typeof(int), 201)]
-        public Task<IActionResult> Post(string title)
+        [HttpPost]
+        [ProducesResponseType(typeof(NodeDTO), 201)]
+        [ProducesResponseType(null, 400)]
+        public async Task<IActionResult> Post(NodeCreateDTO newNode)
         {
-            var result = _repository.createNewNode(title);
+            var result = await _repository.createNewNode(newNode);
+                
+            if (result != null)
+            {
+                return CreatedAtAction(nameof(Get), new { result.id }, result);
+            }
 
-            return result.Result.Response == Core.Response.BadRequest ? CreatedAtAction(nameof(Get), result.Result.nodeID, result) : 2
-        }*/
+            return BadRequest();
+        }
 
         [HttpGet]
         public async Task<IReadOnlyCollection<NodeDTO>> Get()
@@ -44,8 +50,20 @@ namespace iLit.API.Controllers
         [ProducesResponseType(typeof(NodeDTO), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
         public async Task<ActionResult<NodeDTO>> Get(int id)
-            => (await _repository.getNode(id)).ToActionResult();
-        
+        {
+            return (await _repository.getNode(id)).ToActionResult();
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return (await _repository.deleteNode(id)).ToActionResult();
+        }
+
     }
 
 }
+
+
