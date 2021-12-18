@@ -2,14 +2,18 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h1>Characters</h1>
-
+<h1>New node</h1>
+<h3>Insert title</h3>
 <EditForm Model ="@node" OnValidSubmit="@doNothing"> 
     <DataAnnotationsValidator />
     <ValidationSummary />
-    <div class="form group">
+    <div class="form-group">
         <label for="NodeTitle">Title</label>
         <InputText id="Title" @bind-Value="node.Title" class="form-control" />
+    </div>
+    <div class="form-group">
+    <br />
+    <button type="submit" class="btn btn-success" @onclick="(() => doNothing())">Create</button>
     </div>
 </EditForm>
 
@@ -20,10 +24,12 @@
 
 
 @code {
+    public bool isCreated {get; set;} = false;
     private NodeCreateDTO node = new();
 
     private void doNothing() {
-        //nothing
+        Console.WriteLine("Node title: "+node.Title);
+
     }
     private async Task HandleValidSubmit() {
        /* var response = await Http.PostAsJsonAsync("api/Nodes", node);*/
