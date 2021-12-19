@@ -13,7 +13,7 @@ using static iLit.API.Extensions;
 namespace iLit.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/")]
     public class NodeController : ControllerBase
     {
         private readonly INodeRepository _repository;

@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace iLit.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/")]
     public class EdgeController : ControllerBase
     {
         private readonly IEdgeRepository _repository;
