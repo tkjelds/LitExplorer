@@ -1,0 +1,44 @@
+@page "/addNewNodeDebug"
+@using BlazorApp.Data
+@using System.Text.Json
+@using System.Text.Json.Serialization;
+@inject IHttpClientFactory ClientFactory
+
+<div class ="inputs">
+    <input type="text" @bind:event="oninput" placeholder="Insert title here" @bind="Title"/>
+    <RadzenButton Click=@(args =>newEntity()) Text="Add New Node" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" />
+    <br>
+    "@Title"
+</div>
+
+
+
+
+
+
+
+
+@code {
+    public string Title {get; set;}
+
+    private void newEntity() {
+        //Parsing of the "Title" input field when the Add button is pressed
+        if(!string.IsNullOrWhiteSpace(Title)) {
+            //Title is nonempty
+            var title = Title;
+            var node = new Node();
+            node.Name = title;
+            }
+
+        //Something something update database with title
+        /*var request = new HttpRequestMessage(HttpMethod.Post,
+            ">>API<<", title);*/
+
+
+    }
+
+    public class Node {
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+    }
+}
