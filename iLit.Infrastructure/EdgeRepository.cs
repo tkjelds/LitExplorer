@@ -18,38 +18,57 @@ namespace iLit.Infrastructure
             _context = context;
         }
 
-        public async Task<(Response Response, int EdgeID)> createNewEdge(int fromID, int toID)
+        public async Task<EdgeDTO> createNewEdge(EdgeCreateDTO newEdge)
         {
             var edge = new Edge
             {
-                fromNodeID = fromID,
-                toNodeID = toID
+                fromNodeID = newEdge.nodeFromID,
+                toNodeID = newEdge.nodeToID
             };
             try
             {
                 await _context.Edges.AddAsync(edge);
                 await _context.SaveChangesAsync();
-                return (Response.Created, edge.edgeID);
+                return new EdgeDTO(edge.edgeID, edge.fromNodeID, edge.toNodeID);
             }
             catch(DbUpdateException)
             {
-                return (Response.BadRequest, 0);
+                return null;//Kan håndteres af Edgecontroller. 
             }
             
         }
 
-        public async Task<(Response Response, int edgeID)> deleteEdge(int ID)
+        public async Task<Response> deleteEdge(int ID)
         {
             var edge = await _context.Edges.FindAsync(ID);
 
             if(edge == null)
             {
-                return (Response.BadRequest, 0);
+                return Response.NotFound;
             }
 
             _context.Edges.Remove(edge);
             await _context.SaveChangesAsync();
-            return (Response.Deleted, ID);
+            return Response.Deleted;
+        }
+
+        public async Task<Response> deleteEdgesGivenNodeId(int nodeId)
+        {
+            var edges = await (from e in _context.Edges
+                               where (e.fromNodeID == nodeId || e.toNodeID == nodeId)
+                               select e).ToListAsync();
+
+            if (!edges.Any())
+            {
+                return Response.NotFound;
+            }
+
+            foreach(Edge e in edges)
+            {
+               await deleteEdge(e.edgeID);
+            }
+
+            return Response.Deleted;
         }
 
         public async Task<IReadOnlyCollection<EdgeDTO>> getAllEdges()
@@ -65,7 +84,7 @@ namespace iLit.Infrastructure
         }
 
         // TODO: Check for nonexisting edge with option type.
-        public async Task<EdgeDTO> getEdge(int ID)
+        public async Task<Option<EdgeDTO>> getEdge(int ID)
         {
             var edge = await (from e in _context.Edges
                               where e.edgeID == ID

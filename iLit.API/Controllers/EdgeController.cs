@@ -11,7 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace iLit.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/")]
     public class EdgeController : ControllerBase
     {
         private readonly IEdgeRepository _repository;
@@ -23,6 +23,42 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
+        [HttpPost]
+        [ProducesResponseType(typeof(EdgeDTO), 201)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Post(EdgeCreateDTO newEdge)
+        {
+            var result = await _repository.createNewEdge(newEdge);
+
+            if (result != null)
+            {
+                return CreatedAtAction(nameof(Get), new { result.edgeID }, result);
+            }
+
+            return BadRequest();
+        }
+
+        [HttpGet]
+        public async Task<IReadOnlyCollection<EdgeDTO>> Get()
+        {
+            return await _repository.getAllEdges();
+        }
+
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(EdgeDTO), StatusCodes.Status200OK)]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<EdgeDTO>> Get(int id)
+        {
+            return (await _repository.getEdge(id)).ToActionResult();
+        }
+
+        [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return (await _repository.deleteEdge(id)).ToActionResult();
+        }
     }
 
 }

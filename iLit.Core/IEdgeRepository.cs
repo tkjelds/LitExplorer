@@ -12,15 +12,15 @@ namespace iLit.Core
         //Task<bool> newEdgeRequest(int fromNodeID, int toNodeID);
 
         /*Creates a new Edge(int, int).*/
-        Task<(Response Response, int EdgeID)> createNewEdge(int fromNodeID, int toNodeID);
+        Task<EdgeDTO> createNewEdge(EdgeCreateDTO newEdge);
 
         /*Deletes the Edge in the database with the corresponding ID that is given*/
-        Task<(Response Response, int edgeID)> deleteEdge(int ID);
+        Task<Response> deleteEdge(int ID);
 
         /*Returns a list of all Edges.*/
         Task<IReadOnlyCollection<EdgeDTO>> getAllEdges();
 
         /*Returns a Edge.*/
-        Task<EdgeDTO> getEdge(int ID);
+        Task<Option<EdgeDTO>> getEdge(int ID);
     }
 }

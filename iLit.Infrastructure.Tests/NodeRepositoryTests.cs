@@ -45,16 +45,14 @@ namespace iLit.Infrastructure.Tests
         public async Task Create_Node_From_String()
         {
             //Arrange
-            var expectedResponse = (Response.Created, 3);
-            var expectedNode = new NodeDTO(3, "Article3");
+            var newNode = new NodeCreateDTO { title = "Article3" };
+            var expectedResponse = new NodeDTO(3, "Article3");
 
             //Act
-            var actualResponse = await _repo.createNewNode("Article3");
-            var actualNode = await _repo.getNode(3);
+            var actualResponse = await _repo.createNewNode(newNode);
 
             //Assert
             Assert.Equal(expectedResponse, actualResponse);
-            Assert.Equal(expectedNode, actualNode.Value);
 
         }
 
@@ -62,13 +60,13 @@ namespace iLit.Infrastructure.Tests
         public async Task Create_Node_Given_Already_Existing_Node() 
         {
             //Arrange
-            var expected = (Response.BadRequest, 0);
-
+            //var expected = (Response.BadRequest, 0);
+            var newNode = new NodeCreateDTO { title = "Article1" };
             //Act
-            var actual = await _repo.createNewNode("Article1");
+            var actual = await _repo.createNewNode(newNode);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Null(actual);
         }
 
         [Fact]
@@ -85,6 +83,19 @@ namespace iLit.Infrastructure.Tests
             //Assert
             Assert.Equal(expected1, actual1.Value);
             Assert.Equal(expected2, actual2.Value);
+        }
+
+        [Fact]
+        public async Task Get_Node_That_Does_Not_Exist()
+        {
+            //Arrange
+            //var expected = new NodeDTO(10, "Article34");
+
+            //Act
+            var actual = await _repo.getNode(10);
+
+            //Assert
+            Assert.True(actual.IsNone);
         }
 
         [Fact]
@@ -109,9 +120,9 @@ namespace iLit.Infrastructure.Tests
             var expected1 = new NodeDTO(1, "Article1");
             var expected2 = new NodeDTO(2, "Article2");
             var expected3 = new NodeDTO(3, "Article3");
-
+            var newNode = new NodeCreateDTO { title = "Article3" };
             //Act
-            await _repo.createNewNode("Article3");
+            await _repo.createNewNode(newNode);
 
             var actual = await _repo.getAllNodes();
 
@@ -125,7 +136,7 @@ namespace iLit.Infrastructure.Tests
         public async Task Delete_Node() 
         {
             //Arrange
-            var expected = (Response.Deleted, 2);
+            var expected = Response.Deleted;
 
             //Act
             var actual = await _repo.deleteNode(2);
@@ -138,7 +149,7 @@ namespace iLit.Infrastructure.Tests
         public async Task Delete_Node_That_Does_Not_Exist()
         {
             //Arrange
-            var expected = (Response.NotFound, 0);
+            var expected = Response.NotFound;
 
             //Act
             var actual = await _repo.deleteNode(3);

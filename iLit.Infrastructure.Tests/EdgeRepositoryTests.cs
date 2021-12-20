@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace iLit.Infrastructure.Tests
 {
-    public class EdgeRepositoryTests
+    public class EdgeRepositoryTests : IDisposable
     {
         private readonly EdgeRepository _repo;
         private readonly iLitContext _context;
@@ -66,10 +66,11 @@ namespace iLit.Infrastructure.Tests
         public async Task Create_Edge_Given_Valid_Input()
         {
             //Arrange
-            var expected = (Response.Created, 3);
+            var expected = new EdgeDTO(3, 1, 3);
+            var newEdge = new EdgeCreateDTO { nodeFromID = 1, nodeToID = 3 };
 
             //Act
-            var actual = await _repo.createNewEdge(2, 1);
+            var actual = await _repo.createNewEdge(newEdge);
 
             //Assert
             Assert.Equal(expected, actual);
@@ -80,31 +81,32 @@ namespace iLit.Infrastructure.Tests
         public async Task Create_Edge_Given_Already_Existing_Edge()
         {
             //Arrange
-            var expected = (Response.BadRequest, 0);
+            //var expected = new EdgeDTO(3, 1, 2);
+            var newEdge = new EdgeCreateDTO { nodeFromID = 1, nodeToID = 2 };
 
             //Act
-            var actual = await _repo.createNewEdge(1, 2);
+            var actual = await _repo.createNewEdge(newEdge);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Null(actual);
         }
         [Fact]
         public async Task Create_Edge_Given_Identical_From_And_To_Node_ID()
         {
             //Arrange
-            var expected = (Response.BadRequest, 0);
+            var newEdge = new EdgeCreateDTO { nodeFromID = 1, nodeToID = 1 };
 
             //Act
-            var actual = await _repo.createNewEdge(1, 1);
+            var actual = await _repo.createNewEdge(newEdge);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Null(actual);
         }
         [Fact]
         public async Task Delete_Edge_Given_Valid_ID()
         {
             //Arrange
-            var expected = (Response.Deleted, 1);
+            var expected = Response.Deleted;
 
             //Act
             var actual = await _repo.deleteEdge(1);
@@ -117,7 +119,7 @@ namespace iLit.Infrastructure.Tests
         public async Task Delete_Edge_Given_Nonexistent_ID()
         {
             //Arrange
-            var expected = (Response.BadRequest, 0);
+            var expected = Response.NotFound;
 
             //Act
             var actual = await _repo.deleteEdge(10);
@@ -136,7 +138,7 @@ namespace iLit.Infrastructure.Tests
             var actual = await _repo.getEdge(1);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual.Value);
         }
         [Fact]
         public async Task Get_Edge_Given_Nonexistent_ID()
@@ -145,7 +147,7 @@ namespace iLit.Infrastructure.Tests
             var actual = await _repo.getEdge(10);
 
             //Assert
-            Assert.Null(actual);
+            Assert.True(actual.IsNone);
         }
 
         [Fact]
@@ -159,6 +161,54 @@ namespace iLit.Infrastructure.Tests
                 e => Assert.Equal(new EdgeDTO(1, 1, 2), e),
                 e => Assert.Equal(new EdgeDTO(2, 3, 2), e)
             );
+        }
+
+        [Fact]
+        public async Task Delete_Node_With_Edges()
+        {
+            //Arrange
+            var nodeRepo = new NodeRepository(_context);
+            //Act
+            await nodeRepo.deleteNode(2);
+            var result = await _repo.getAllEdges();
+            //Assert
+            Assert.Empty(result);
+        }
+
+        [Fact]
+        public async Task Delete_Node_With_Single_Edge_Connected_To_It_And_Check_For_Remaning_Edge()
+        {
+            //Arrange
+            var nodeRepo = new NodeRepository(_context);
+            var expected = new EdgeDTO(1, 1, 2);
+            //Act
+            await nodeRepo.deleteNode(3);
+            var result = await _repo.getAllEdges();
+            //Assert
+            Assert.Equal(expected, result.ElementAt(0));
+        }
+
+        //Rasmus code for cleaning up test.
+        private bool disposed;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+
+                disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }
