@@ -37,10 +37,8 @@
 
     }
     private async Task HandleValidSubmit() {
-        await Task.Run(new Action(() => isFailed=!isFailed));
         Console.WriteLine("HandleValidSubmit() has been invoked.");
-        var response = await Http.PostAsJsonAsync("api/Nodes", node);
-        Console.WriteLine("it works?");
+        var response = await Http.PostAsJsonAsync("https://localhost:5001/api/Node", node);
         if (response.IsSuccessStatusCode) {
             Console.WriteLine("Succes!");
             isSuccesful = true;

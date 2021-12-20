@@ -23,7 +23,7 @@ namespace iLit.API
 
         private static void SeediLit(IiLitContext context)
         {
-            var edge1 = new Edge
+            /*var edge1 = new Edge
             {
                 fromNodeID = 1,
                 toNodeID = 2
@@ -49,7 +49,7 @@ namespace iLit.API
             };
             context.Nodes.AddRange(node1, node2, node3);
 
-            context.SaveChanges();
+            context.SaveChanges();*/
         }
     }
 }

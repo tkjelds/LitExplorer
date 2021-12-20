@@ -60,6 +60,8 @@ namespace iLit.API
             {
                 endpoints.MapControllers();
             });
+
+            app.UseBlazorFrameworkFiles();
         }
     }
 }
