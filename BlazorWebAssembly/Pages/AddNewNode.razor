@@ -9,7 +9,7 @@
     <ValidationSummary />
     <div class="form-group">
         <label for="NodeTitle">Title</label>
-        <InputText id="Title" @bind-Value="node.Title" class="form-control" />
+        <InputText id="Title" @bind-Value="node.title" class="form-control" />
     </div>
     <div class="form-group">
     <br />
@@ -31,7 +31,7 @@
     private NodeCreateDTO node = new();
 
     private void doNothing() {
-        Console.WriteLine("Node title: "+node.Title);
+        Console.WriteLine("Node title: "+node.title);
         Console.WriteLine("isFailed = " + isFailed + ", isSuccesful = " + isSuccesful);
         
 
@@ -39,7 +39,7 @@
     private async Task HandleValidSubmit() {
         await Task.Run(new Action(() => isFailed=!isFailed));
         Console.WriteLine("HandleValidSubmit() has been invoked.");
-        /*var response = await Http.PostAsJsonAsync("api/Nodes", node);
+        var response = await Http.PostAsJsonAsync("api/Nodes", node);
         Console.WriteLine("it works?");
         if (response.IsSuccessStatusCode) {
             Console.WriteLine("Succes!");
@@ -48,6 +48,6 @@
         } else {
             Console.WriteLine("Oh no it failed!");
             isFailed = true;
-        }*/
+        }
     } 
 }
