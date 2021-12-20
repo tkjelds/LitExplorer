@@ -1,0 +1,52 @@
+@page "/addNewNodeDebug"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<h3>New node</h3>
+
+<EditForm Model ="@node" OnValidSubmit="@HandleValidSubmit"> 
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="NodeTitle">Title</label>
+        <InputText id="Title" @bind-Value="node.title" class="form-control" />
+    </div>
+    <div class="form-group">
+    <br />
+    <button type="submit" class="btn btn-success" @onclick="doNothing">Create</button>
+    </div>
+    <p hidden="@(!isFailed)">Something went wrong :(</p>
+    <p hidden="@(!isSuccesful)">Node added succesfully</p>
+</EditForm>
+
+
+
+
+
+
+
+@code {
+    private bool isFailed {get; set;} = false;
+    private bool isSuccesful {get; set;} = false;
+    private NodeCreateDTO node = new();
+
+    private void doNothing() {
+        Console.WriteLine("Node title: "+node.title);
+        Console.WriteLine("isFailed = " + isFailed + ", isSuccesful = " + isSuccesful);
+        
+
+    }
+
+    private async Task HandleValidSubmit() {
+        Console.WriteLine("HandleValidSubmit() has been invoked.");
+        var response = await Http.PostAsJsonAsync("api/Node", node);
+        if (response.IsSuccessStatusCode) {
+            Console.WriteLine("Succes!");
+            isSuccesful = true;
+
+        } else {
+            Console.WriteLine("Oh no it failed!");
+            isFailed = true;
+        }
+    } 
+}

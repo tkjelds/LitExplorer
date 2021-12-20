@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	 <Nullable>enable</Nullable>
+	 <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>f30b1b8b-e44a-4359-8fec-4f5996a17eba</UserSecretsId>
   </PropertyGroup>
 
@@ -20,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\iLit.Core\iLit.Core.csproj" />
     <ProjectReference Include="..\iLit.Infrastructure\iLit.Infrastructure.csproj" />
+    <ProjectReference Include="..\BlazorWebAssembly\BlazorWebAssembly.csproj" />
   </ItemGroup>
 
 </Project>

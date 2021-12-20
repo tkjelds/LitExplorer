@@ -1,0 +1,14 @@
+@page "/"
+@inject IModalService modal
+
+<Circle></Circle>
+<RadzenButton Click=@(args =>ShowModal()) Text="Add New" Icon="add_circle_outline" ButtonStyle="ButtonStyle.Secondary" />
+
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; }   
+    async Task ShowModal()
+    {
+        var addNewModal = Modal.Show<ModalButtonPage>("Add new node or edge");
+        
+    }
+}
