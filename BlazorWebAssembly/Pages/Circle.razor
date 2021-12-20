@@ -1,21 +1,13 @@
 @page "/circle"
 @page "/c"
 
-
-<h3>Circle Size</h3>
 <div class="circles">
-    <input type="number" @bind="@radius" @bind:event="oninput" step="40" placeholder="How big?" />
     <!--input type="string" @bind="@title" /!-->
     @for (int i = 0; i < strings.Count; i++)
+    //@for (int i = 0; i < strings.Count; i++)
     {
         var id = i;
         <div class="circle">
-            <svg height="@(radius*2)" width="@(radius*2)">
-                <!--circle cx="@radius" cy="@radius" r="@(radius*0.8)" stroke="black" stroke-width="@(radius *0.01)" fill="@color"!-->
-                <circle cx="@radius" cy="@radius" r="@(radius*0.8)" stroke="black" stroke-width="@(radius *0.01)" fill=@colors[id]/>
-                <text x="50%" y="50%" text-anchor="middle" alignment-baseline="central" fill="#fff" font-size="@(radius*0.2)px">@strings[id]</text>
-                <!--button class="bt" height="@(radius*2)" width="@(radius*2)" fill="red" @onclick="toGreen" /!-->
-            </svg>   
             <button class="circleButton" @onclick="(() => newText(id))">@strings[id]</button !-->
         </div>
 
@@ -31,18 +23,23 @@
         fill: blue;
         background-color: #2fb7d0;
     }
+    .circles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 12rem);
+        grid-gap: 0.5rem;
+        justify-content: center;
+        padding-left: 0;
+        padding-bottom: 5px;
+    }
 
 </style>
 
 @code {
-    int radius {get; set;} = 100;
     string color { get; set; } = "#2fb7d0";
 
     string title { get; set; } = "Untitled";
 
-    List<string> strings = new List<string> {"no", "silver", "bullet"};
-
-    List<string> colors = new List<string> {"red", "green", "blue"};
+    List<string> strings = new List<string> {"no", "silver", "bullet", "a", "b", "c", "d", "e"};
 
     private void newText(int id) {
         strings[id] = title;
