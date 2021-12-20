@@ -1,5 +1,6 @@
 ﻿using System;
-
+//Credit to Rasmus Lystrøm for this option class
+//rnie@itu.dk
 public struct Option<T> where T : class
 {
     private readonly T? _value;

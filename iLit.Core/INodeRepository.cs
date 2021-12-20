@@ -7,10 +7,10 @@ namespace iLit.Core
     {
 
         /*Creates an ID and creates a new Node(title, ID).*/
-        Task<(Response Response, int nodeID)> createNewNode(string title);
+        Task<NodeDTO> createNewNode(NodeCreateDTO newNode);
 
         /*Deletes the Node in the database with the corresponding ID that is given*/
-        Task<(Response Response, int nodeID)> deleteNode(int ID);
+        Task<Response> deleteNode(int ID);
 
         /*Returns a list of Nodes.*/
         Task<IReadOnlyCollection<NodeDTO>> getAllNodes();
