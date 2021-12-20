@@ -10,6 +10,6 @@ namespace iLit.Core
     {
         [Required]
         [StringLength(100)]
-        public string Title { get; init; }
+        public string Title { get; set; }
     }
 }
