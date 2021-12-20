@@ -17,7 +17,7 @@ namespace iLit.API
             //CreateHostBuilder(args).Build().Run();
             var hostBuilder = CreateHostBuilder(args).Build();
 
-            hostBuilder.Seed(); //<- from our seed extension class. 
+            //hostBuilder.Seed(); //<- from our seed extension class. 
 
             hostBuilder.Run();
         }
