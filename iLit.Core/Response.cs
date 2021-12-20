@@ -8,6 +8,9 @@ namespace iLit.Core
         Deleted,
         NotFound,
         BadRequest,
-        Conflict
+        Conflict/*,
+        LoopedEdgeReference,
+        DuplicateNode,
+        TwoWayEdgeReference*/
     }
 }

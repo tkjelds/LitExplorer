@@ -135,6 +135,5 @@ namespace iLit.API.Tests.Controllers
             // Assert
             Assert.IsType<NotFoundResult>(response);
         }
-
     }
 }

@@ -20,7 +20,6 @@ namespace iLit.API
             hostBuilder.Seed(); //<- from our seed extension class. 
 
             hostBuilder.Run();
-
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

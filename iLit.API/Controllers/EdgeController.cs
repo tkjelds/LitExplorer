@@ -59,7 +59,6 @@ namespace iLit.API.Controllers
         {
             return (await _repository.deleteEdge(id)).ToActionResult();
         }
-
     }
 
 }
