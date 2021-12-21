@@ -83,11 +83,15 @@
     private void setFromNode(NodeDTO node) {
         nodeFromID = node.id;
         nodeFromTitle = node.title;
+        isSuccesful = false;
+        isFailed = false;
     }
 
     private void setToNode(NodeDTO node) {
         nodeToID = node.id;
         nodeToTitle = node.title;
+        isSuccesful = false;
+        isFailed = false;
     }
     private async Task HandleValidSubmit() {
         Console.WriteLine("HandleValidSubmit() has been invoked.");
