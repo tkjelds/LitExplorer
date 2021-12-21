@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testProject", "testProject\testProject.csproj", "{AF9BDAF4-B937-4636-94EB-6C524AFCC71A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "testProject.test", "testProject.test\testProject.test.csproj", "{FE8294B3-10E1-42C9-8161-8623D54B78DF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iLit.Core", "iLit.Core\iLit.Core.csproj", "{19ED87DD-BD26-490B-BD77-A5017E2FD29D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iLit.Infrastructure", "iLit.Infrastructure\iLit.Infrastructure.csproj", "{DD59856D-A52E-4FFF-8AA8-D29AC88DCA87}"
