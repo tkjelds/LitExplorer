@@ -20,7 +20,7 @@
                 @foreach (var edge in edgeobs)
                 {
                     <tr>
-                        <td>@edge.nodeFromTitle references @edge.nodeToTitle </td><td><button class="btn btn-info" @onclick="@(() => deleteEdge(@edge.edgedto))">Delete Reference</button></td>
+                        <td>"@edge.nodeFromTitle" references "@edge.nodeToTitle" </td><td><button class="btn btn-info" @onclick="@(() => deleteEdge(@edge.edgedto))">Delete Reference</button></td>
                     </tr>
                 }
             </tbody>
