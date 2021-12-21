@@ -22,33 +22,30 @@ namespace iLit.API
 
         private static async Task SeediLitAsync(IiLitContext context)
         {
-            var edge1 = new Edge
-            {
-                fromNodeID = 1,
-                toNodeID = 2
-            };
-            var edge2 = new Edge
-            {
-                fromNodeID = 3,
-                toNodeID = 2
-            };
-            context.Edges.AddRange(edge1, edge2);
+            if (!context.Nodes.Any() || !context.Edges.Any()) {
+                var edge1 = new Edge {
+                    fromNodeID = 1,
+                    toNodeID = 2
+                };
+                var edge2 = new Edge {
+                    fromNodeID = 3,
+                    toNodeID = 2
+                };
+                context.Edges.AddRange(edge1, edge2);
 
-            var node1 = new Node
-            {
-                title = "Article1"
-            };
-            var node2 = new Node
-            {
-                title = "Article2"
-            };
-            var node3 = new Node
-            {
-                title = "Article3"
-            };
-            context.Nodes.AddRange(node1, node2, node3);
+                var node1 = new Node {
+                    title = "No Silver Bullet"
+                };
+                var node2 = new Node {
+                    title = "Object Oriented Software Engineering"
+                };
+                var node3 = new Node {
+                    title = "The Hopes and Dreams of Programmers: Null"
+                };
+                context.Nodes.AddRange(node1, node2, node3);
 
-            await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

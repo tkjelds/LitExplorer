@@ -47,19 +47,21 @@ namespace iLit.API.Controllers
             return await _repository.getAllEdges();
         }
 
-
+        [Authorize]
         [HttpGet("ToNodeId/{id}")]
         public async Task<IReadOnlyCollection<EdgeDTO>> GetEdgesToNodeId(int id)
         {
             return await _repository.getEdgesRelatedToNodeId(id);
         }
 
+        [Authorize]
         [HttpGet("FromNodeId/{id}")]
         public async Task<IReadOnlyCollection<EdgeDTO>> GetEdgesFromNodeId(int id)
         {
             return await _repository.getEdgesRelatedFromNodeId(id);
         }
 
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(EdgeDTO), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
