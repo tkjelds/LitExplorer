@@ -8,7 +8,7 @@
         <p><em>Loading...</em></p>
     }
     else {
-        @for (int i = 0; i < strings.Count; i++)
+        @for (int i = 0; i < nodes.Length; i++)
         {  
             var index = i;
             <div class="circle">
@@ -23,7 +23,7 @@
                     <tbody>
                         <!-- All edges from the node !-->
                         <th>
-                            @foreach (var s in (nodeobs[index].edgeFromString)) {
+                            @foreach (var s in (nodeobs[index].edgeToString)) {
                                 <tr>@s</tr>
                             }
                         </th>
@@ -39,7 +39,7 @@
                     <tbody>
                         <th>
                         <!-- All edges to the node !-->
-                            @foreach (var s in (nodeobs[index].edgeToString)) {
+                            @foreach (var s in (nodeobs[index].edgeFromString)) {
                                 <tr>@s</tr>
                             }
                         </th>
@@ -99,7 +99,6 @@
 
     private int index { get; set; } = 0;
 
-    List<string> strings = new List<string> {"no", "silver", "bullet", "a", "b", "c", "d", "e"};
     List<string> display = new List<string>();
 
     private void displayAllNone() {
@@ -117,18 +116,18 @@
     }
    
    public class NodeObject {
-        public NodeDTO node {get;set;}
+        public NodeDTO nodenode {get;set;}
         public HttpClient Http {get; set;}
         public EdgeDTO[]? edgesTo {get; set;}
         public EdgeDTO[]? edgesFrom {get; set;}
 
         public List<string> edgeToString {get; set;} = new List<string>();
-        public List<string> edgeFromString {get; set; }= new List<string>();
+        public List<string> edgeFromString {get; set; } = new List<string>();
         public List<int> edgeToID {get; set;} = new List<int>();
         public List<int> edgeFromID {get; set;} = new List<int>();
 
         public NodeObject(NodeDTO nod, HttpClient Htt) {
-            node = nod;
+            nodenode = nod;
             Http = Htt;
         }
 
@@ -147,46 +146,38 @@
         }
 
         public async Task makeEdgeList(NodeDTO node) {
-        await getEdgesFrom(node);
-        await getEdgesTo(node);
+            await getEdgesFrom(node);
+            await getEdgesTo(node);
 
-        foreach(EdgeDTO edge in edgesTo) {
-            var nodeID = edge.nodeToID;
-            edgeToID.Add(nodeID);
-        }
+            foreach(EdgeDTO edge in edgesTo) {
+                var nodeID = edge.nodeToID;
+                edgeToID.Add(nodeID);
+            }
 
-        foreach(EdgeDTO edge in edgesFrom) {
-            var nodeID = edge.nodeFromID;
-            edgeFromID.Add(nodeID);
-        }
-        
-        await getNodeTitleWithID(edgeFromID, 1);
-        await getNodeTitleWithID(edgeToID, 2);
-
-        foreach(var e in edgeToString) {
-            Console.WriteLine("String = " + e);
-        }
-        foreach(var e in edgeFromString) {
-            Console.WriteLine("Halleluja = " + e);
-        }
+            foreach(EdgeDTO edge in edgesFrom) {
+                var nodeID = edge.nodeFromID;
+                edgeFromID.Add(nodeID);
+            }
+            
+            await getNodeTitleWithID(edgeFromID, 1);
+            await getNodeTitleWithID(edgeToID, 2);
 
         async Task getNodeTitleWithID(List<int> ids, int op) {
         //if op = 1, set nodes to
         //if op = 2, set nodes from
-        foreach(var id in ids) {
-        Console.WriteLine(id);
-        }
         if(op == 1) {
             foreach(int id in ids) {
-                var node = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
-                edgeToString.Add(node.title);
+                var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                edgeToString.Add(nord.title);
+                Console.WriteLine("The title of node nord is: " + nord);
             }
         }
 
         if(op == 2) {
             foreach(int id in ids) {
-                var node = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
-                edgeFromString.Add(node.title);
+                var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                edgeFromString.Add(nord.title);
+                Console.WriteLine("The title of node nord is: " + nord);
             }
         }
     }
