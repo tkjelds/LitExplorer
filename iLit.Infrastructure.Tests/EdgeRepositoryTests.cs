@@ -204,6 +204,35 @@ namespace iLit.Infrastructure.Tests
             }
         }
 
+        [Fact]
+        public async Task Get_All_Edges_Related_ToNodeId()
+        {
+            //Act
+            var edges = await _repo.getEdgesRelatedToNodeId(2);
+
+            //Assert
+            Assert.Collection(edges,
+                e => Assert.Equal(new EdgeDTO(1, 1, 2), e),
+                e => Assert.Equal(new EdgeDTO(2, 3, 2), e)
+            );
+        }
+
+        [Fact]
+        public async Task Get_All_Edges_Related_FromNodeId()
+        {
+            //Act
+            var edges1 = await _repo.getEdgesRelatedFromNodeId(1);
+            var edges2 = await _repo.getEdgesRelatedFromNodeId(3);
+
+            //Assert
+            Assert.Collection(edges1,
+                e => Assert.Equal(new EdgeDTO(1, 1, 2), e)
+            );
+            Assert.Collection(edges2,
+                e => Assert.Equal(new EdgeDTO(2, 3, 2), e)
+            );
+        }
+
         public void Dispose()
         {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method

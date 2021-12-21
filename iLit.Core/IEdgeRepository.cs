@@ -22,5 +22,10 @@ namespace iLit.Core
 
         /*Returns a Edge.*/
         Task<Option<EdgeDTO>> getEdge(int ID);
+
+        public Task<IReadOnlyCollection<EdgeDTO>> getEdgesRelatedToNodeId(int ID);
+
+        public Task<IReadOnlyCollection<EdgeDTO>> getEdgesRelatedFromNodeId(int ID);
     }
 }
+
