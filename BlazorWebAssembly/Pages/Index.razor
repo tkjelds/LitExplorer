@@ -2,12 +2,20 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 <PageTitle>Index</PageTitle>
-<h1>Hello, world!</h1>
 <Circle/>
-<button class="btn btn-primary" @onclick="ToggleNewNode">Add new node</button>
-<button class="btn btn-primary" @onclick="ToggleNewEdge">Add new edge</button>
+<button class="addNewButtons" @onclick="ToggleNewNode">Add New Article</button>
+<button class="addNewButtons" @onclick="ToggleNewEdge">Add New Reference</button>
 <p hidden="@hideNewEdge"><AddNewEdge/></p>
 <p hidden="@hideNewNode"><AddNewNode/></p>
+
+<style>
+    .addNewButtons {
+        background-color: #b6b5b3;
+        color: white;
+        width: 100px;
+        height: 100px;
+    }
+</style>
 
 @code {
     private bool hideNewNode {get; set;} = true;
