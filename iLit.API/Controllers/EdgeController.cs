@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 using iLit.Infrastructure;
 using iLit.Core;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace iLit.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]/")]
     public class EdgeController : ControllerBase
@@ -23,6 +25,7 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(EdgeDTO), 201)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -37,13 +40,14 @@ namespace iLit.API.Controllers
 
             return BadRequest();
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IReadOnlyCollection<EdgeDTO>> Get()
         {
             return await _repository.getAllEdges();
         }
 
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(EdgeDTO), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
@@ -52,6 +56,7 @@ namespace iLit.API.Controllers
             return (await _repository.getEdge(id)).ToActionResult();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
