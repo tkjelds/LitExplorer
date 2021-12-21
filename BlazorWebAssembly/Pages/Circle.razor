@@ -122,8 +122,8 @@
         public EdgeDTO[]? edgesTo {get; set;}
         public EdgeDTO[]? edgesFrom {get; set;}
 
-        public List<string> edgeToString {get; set;} = new List<string>();
-        public List<string> edgeFromString {get; set; } = new List<string>();
+        public HashSet<string> edgeToString {get; set;} = new HashSet<string>();
+        public HashSet<string> edgeFromString {get; set; } = new HashSet<string>();
         public List<int> edgeToID {get; set;} = new List<int>();
         public List<int> edgeFromID {get; set;} = new List<int>();
 
@@ -170,7 +170,6 @@
             foreach(int id in ids) {
                 var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
                 edgeToString.Add(nord.title);
-                Console.WriteLine("The title of node nord is: " + nord);
             }
         }
 
@@ -178,7 +177,6 @@
             foreach(int id in ids) {
                 var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
                 edgeFromString.Add(nord.title);
-                Console.WriteLine("The title of node nord is: " + nord);
             }
         }
     }
