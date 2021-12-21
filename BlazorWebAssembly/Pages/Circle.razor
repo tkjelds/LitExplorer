@@ -1,15 +1,53 @@
 @page "/circle"
 @page "/c"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
 
 <div class="circles">
-    @for (int i = 0; i < strings.Count; i++)
-    {
-        var id = i;
-        <div class="circle">
-            <button class="circleButton" @onclick="(() => newText(id))">@strings[id]</button>
-            <div class="edgeInfo" style=@display[id]></div>
-        </div>
+    @if (nodes == null) {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        @for (int i = 0; i < nodes.Length; i++)
+        {  
+            var index = i;
+            <div class="circle">
+                <button class="circleButton" @onclick="(() => toggleEdgeList(index))">@nodes[index].title</button>
+                <div class="edgeInfo" style=@display[index]>
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>References</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- All edges from the node !-->
+                        <th>
+                            @foreach (var s in (nodeobs[index].edgeToString)) {
+                                <tr>@s</tr>
+                            }
+                        </th>
+                    </tbody>
+                    </table>
 
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Is referenced in</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th>
+                        <!-- All edges to the node !-->
+                            @foreach (var s in (nodeobs[index].edgeFromString)) {
+                                <tr>@s</tr>
+                            }
+                        </th>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        }
     }
 </div>
 
@@ -41,12 +79,36 @@
 </style>
 
 @code {
+    private NodeDTO[]? nodes {get; set;} 
+    private List<NodeObject> nodeobs = new List<NodeObject>();
+    
+    protected override async Task OnInitializedAsync()  
+    {
+        nodes = await Http.GetFromJsonAsync<NodeDTO[]>("api/Node");
+        Console.WriteLine("Nodes were loaded");
+        if(nodes != null) {
+            displayAllNone();
+            foreach(var node in nodes) {
+                var nod = new NodeObject(node, Http);
+                await nod.makeEdgeList(node);
+                nodeobs.Add(nod);
+            }
+        }
+
+    }
     string color { get; set; } = "#2fb7d0";
-    List<string> strings = new List<string> {"no silver bullet is the name of this article and noon and I mean NOONE can stop it!!!", "silver", "bullet", "a", "b", "c", "d", "e"};
-    List<string> display = new List<string> {"display:none","display:none","display:none","display:none","display:none","display:none","display:none","display:none"};
 
+    private int index { get; set; } = 0;
 
-    private void newText(int id) {
+    List<string> display = new List<string>();
+
+    private void displayAllNone() {
+        foreach(var n in nodes) {
+            display.Add("display:none");
+        }
+    }
+
+    private void toggleEdgeList(int id) {
         if(display[id] == "display:none") {
             display[id] = "display:block";
         } else {
@@ -54,5 +116,73 @@
         }
     }
    
+   public class NodeObject {
+        public NodeDTO nodenode {get;set;}
+        public HttpClient Http {get; set;}
+        public EdgeDTO[]? edgesTo {get; set;}
+        public EdgeDTO[]? edgesFrom {get; set;}
+
+        public List<string> edgeToString {get; set;} = new List<string>();
+        public List<string> edgeFromString {get; set; } = new List<string>();
+        public List<int> edgeToID {get; set;} = new List<int>();
+        public List<int> edgeFromID {get; set;} = new List<int>();
+
+        public NodeObject(NodeDTO nod, HttpClient Htt) {
+            nodenode = nod;
+            Http = Htt;
+        }
+
+        async Task getEdgesTo(NodeDTO node) {
+            Console.WriteLine("getEdgesTo was called.");
+            var id = node.id;
+            edgesTo = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/ToNodeId/{id}");
+        }
+
+        async Task getEdgesFrom(NodeDTO node) {
+            Console.WriteLine("getEdgesFrom was called.");
+            var id = node.id;
+            edgesFrom = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/FromNodeId/{id}");
+            
+        }
+
+        public async Task makeEdgeList(NodeDTO node) {
+            await getEdgesFrom(node);
+            await getEdgesTo(node);
+            if(edgesTo != null) {
+                foreach(EdgeDTO edge in edgesTo) {
+                    var nodeID = edge.nodeFromID;
+                    edgeToID.Add(nodeID);
+                    await getNodeTitleWithID(edgeToID, 2);
+                }
+            }
+            if(edgesFrom != null) {
+                foreach(EdgeDTO edge in edgesFrom) {
+                    var IDNode = edge.nodeToID;
+                    edgeFromID.Add(IDNode);
+                    await getNodeTitleWithID(edgeFromID, 1);
+                }
+            }
+
+        async Task getNodeTitleWithID(List<int> ids, int op) {
+        //if op = 1, set nodes to
+        //if op = 2, set nodes from
+        if(op == 1) {
+            foreach(int id in ids) {
+                var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                edgeToString.Add(nord.title);
+                Console.WriteLine("The title of node nord is: " + nord);
+            }
+        }
+
+        if(op == 2) {
+            foreach(int id in ids) {
+                var nord = await Http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                edgeFromString.Add(nord.title);
+                Console.WriteLine("The title of node nord is: " + nord);
+            }
+        }
+    }
+    }
+   }
 }
 
