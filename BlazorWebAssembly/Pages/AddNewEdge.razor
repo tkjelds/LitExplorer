@@ -23,18 +23,17 @@
             @foreach (var node in nodes)
             {
                 <tr>
-                    <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => setFromNode(@node))">Set as reference from</button>   <button class="btn btn-info" @onclick="@(() => setToNode(@node))">Set as reference to</button></td>
+                    <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => setFromNode(@node))">Set As Reference From</button>   <button class="btn btn-info" @onclick="@(() => setToNode(@node))">Set As Reference To</button></td>
                 </tr>
             }
         </tbody>
         </table>
     }
     <div class="form-group">
-    <br />
-    <text>Chosen from-article: @nodeFromTitle</text>
-    <br />
-    <text2>Chosen to-article: @nodeToTitle</text2>
-    <br />
+    <div class="chosen">
+        <div><text>Chosen from-article: @nodeFromTitle</text></div>
+        <div><text2>Chosen to-article: @nodeToTitle</text2></div>
+    </div>
     <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
@@ -42,12 +41,20 @@
 </EditForm>
 
 <style>
+    .btn-info {
+        color: white;
+    }
     .btn-success {
         background-color: #b6b5b3;
         color: white;
         width: 100px;
         height: 40px;
-        }
+    }
+
+    .chosen {
+        display: block;
+        width: 90%;
+    }
 </style>
 
 
