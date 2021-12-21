@@ -1,0 +1,22 @@
+@page "/Refresh"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+
+<button type="button" class="btn-btn-secondary" @onclick="Refresh">Refresh</button>
+
+<style>
+    .button {
+        background-color: #b6b5b3;
+        color: white;
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+    }
+</style>
+
+@code {
+    private void Refresh()
+    {
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad:true);
+    } 
+}
