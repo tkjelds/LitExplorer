@@ -9,9 +9,11 @@ using iLit.Core;
 using Microsoft.Extensions.Logging;
 using iLit.API;
 using static iLit.API.Extensions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace iLit.API.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]/")]
     public class NodeController : ControllerBase
@@ -25,6 +27,7 @@ namespace iLit.API.Controllers
             _repository = repository;
         }
 
+        [Authorize]
         [HttpPost]
         [ProducesResponseType(typeof(NodeDTO), 201)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -40,12 +43,14 @@ namespace iLit.API.Controllers
             return BadRequest();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IReadOnlyCollection<NodeDTO>> Get()
         {
             return await _repository.getAllNodes();
         }
 
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(NodeDTO), StatusCodes.Status200OK)]
         [HttpGet("{id}")]
@@ -54,6 +59,7 @@ namespace iLit.API.Controllers
             return (await _repository.getNode(id)).ToActionResult();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
