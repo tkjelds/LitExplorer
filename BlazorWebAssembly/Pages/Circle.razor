@@ -86,12 +86,12 @@
         nodes = await Http.GetFromJsonAsync<NodeDTO[]>("api/Node");
         Console.WriteLine("Nodes were loaded");
         if(nodes != null) {
+            displayAllNone();
             foreach(var node in nodes) {
                 var nod = new NodeObject(node, Http);
                 await nod.makeEdgeList(node);
                 nodeobs.Add(nod);
             }
-            displayAllNone();
         }
 
     }
@@ -134,33 +134,33 @@
         async Task getEdgesTo(NodeDTO node) {
             Console.WriteLine("getEdgesTo was called.");
             var id = node.id;
-            var edges = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/ToNodeId/{id}");
-            edgesTo = edges;
+            edgesTo = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/ToNodeId/{id}");
         }
 
         async Task getEdgesFrom(NodeDTO node) {
             Console.WriteLine("getEdgesFrom was called.");
             var id = node.id;
-            var edges = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/FromNodeId/{id}");
-            edgesFrom = edges;
+            edgesFrom = await Http.GetFromJsonAsync<EdgeDTO[]>($"api/Edge/FromNodeId/{id}");
+            
         }
 
         public async Task makeEdgeList(NodeDTO node) {
             await getEdgesFrom(node);
             await getEdgesTo(node);
-
-            foreach(EdgeDTO edge in edgesTo) {
-                var nodeID = edge.nodeToID;
-                edgeToID.Add(nodeID);
+            if(edgesTo != null) {
+                foreach(EdgeDTO edge in edgesTo) {
+                    var nodeID = edge.nodeFromID;
+                    edgeToID.Add(nodeID);
+                    await getNodeTitleWithID(edgeToID, 2);
+                }
             }
-
-            foreach(EdgeDTO edge in edgesFrom) {
-                var nodeID = edge.nodeFromID;
-                edgeFromID.Add(nodeID);
+            if(edgesFrom != null) {
+                foreach(EdgeDTO edge in edgesFrom) {
+                    var IDNode = edge.nodeToID;
+                    edgeFromID.Add(IDNode);
+                    await getNodeTitleWithID(edgeFromID, 1);
+                }
             }
-            
-            await getNodeTitleWithID(edgeFromID, 1);
-            await getNodeTitleWithID(edgeToID, 2);
 
         async Task getNodeTitleWithID(List<int> ids, int op) {
         //if op = 1, set nodes to
