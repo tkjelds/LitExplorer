@@ -1,0 +1,86 @@
+@page "/deleteEdge"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+<h3>Choose a Reference to delete</h3>
+
+    @if (edges == null)
+        {
+        <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Reference</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var edge in edgeobs)
+                {
+                    <tr>
+                        <td>@edge.nodeFromTitle references @edge.nodeToTitle </td><td><button class="btn btn-info" @onclick="@(() => deleteEdge(@edge.edgedto))">Delete Reference</button></td>
+                    </tr>
+                }
+            </tbody>
+            </table>
+        }
+
+    <p hidden="@(!isFailed)">Something went wrong :(</p>
+    <p hidden="@(!isSuccesful)">The reference was succesfully deleted from the database.</p>
+
+
+@code {
+    private EdgeDTO[]? edges {get; set;}
+    private List<EdgeObject> edgeobs {get; set;} = new List<EdgeObject>();
+    private bool isFailed {get; set;} = false;
+    private bool isSuccesful {get; set;} = false;
+    protected override async Task OnInitializedAsync()  
+        {
+            edges = await Http.GetFromJsonAsync<EdgeDTO[]>("api/Edge");
+            if(edges != null) {
+                foreach(var e in edges) {
+                    var ed = new EdgeObject(e, Http);
+                    await ed.setNodeFrom(e.nodeFromID);
+                    await ed.setNodeTo(e.nodeToID);
+                    edgeobs.Add(ed);
+                }
+            }
+        }
+    private async Task deleteEdge(EdgeDTO edge) {
+        Console.WriteLine("deleteEdge() has been invoked.");
+        var response = await Http.DeleteAsync($"api/Edge/{edge.edgeID}");
+        if (response.IsSuccessStatusCode) {
+            isSuccesful = true;
+            isFailed = false;
+        } else {
+            isFailed = true;
+            isSuccesful = false;
+        }
+    }
+
+    public class EdgeObject {
+        HttpClient http;
+        public EdgeDTO? edgedto {get; set;}
+
+        public string nodeFromTitle {get; set;}
+        public string nodeToTitle {get; set;}
+
+        public EdgeObject(EdgeDTO edge, HttpClient htt) {
+            edgedto = edge;
+            http = htt;
+
+        }
+
+        public async Task setNodeFrom(int id) {
+            var get = await http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                nodeFromTitle = get.title;
+        }
+
+        public async Task setNodeTo(int id) {
+            var get = await http.GetFromJsonAsync<NodeDTO>($"api/Node/{id}");
+                nodeToTitle = get.title;
+        }
+    }
+}
