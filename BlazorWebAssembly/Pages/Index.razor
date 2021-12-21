@@ -7,7 +7,6 @@
 <button class="addNewButtons" @onclick="ToggleNewEdge">Add New Reference</button>
 <button class="addNewButtons" @onclick="ToggleNodeDelete">Delete Article</button>
 <button class="addNewButtons" @onclick="ToggleEdgeDelete">Delete Reference</button>
-<button class="addNewButtons" @onclick="Refresh">Refresh</button>
 
 <p hidden="@hideNewEdge"><AddNewEdge/></p>
 <p hidden="@hideNewNode"><AddNewNode/></p>
@@ -53,8 +52,4 @@
         hideNewNode = true;
         hideNodeDelete = true;
     }
-    private void Refresh()
-    {
-        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad:true);
-    } 
 }
