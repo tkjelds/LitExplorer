@@ -83,7 +83,6 @@ namespace iLit.Infrastructure
             return edges;
         }
 
-        // TODO: Check for nonexisting edge with option type.
         public async Task<Option<EdgeDTO>> getEdge(int ID)
         {
             var edge = await (from e in _context.Edges
@@ -96,6 +95,37 @@ namespace iLit.Infrastructure
                                  )).FirstOrDefaultAsync();
 
             return edge;
+        }
+
+        public async Task<IReadOnlyCollection<EdgeDTO>> getEdgesRelatedToNodeId(int ID)
+        {
+            var edges = await (from e in _context.Edges
+                               where e.toNodeID == ID
+                               select new EdgeDTO
+                               (
+                                   e.edgeID,
+                                   e.fromNodeID,
+                                   e.toNodeID
+                                   )).ToListAsync();
+            return edges;
+        }
+
+        public async Task<IReadOnlyCollection<EdgeDTO>> getEdgesRelatedFromNodeId(int ID)
+        {
+            var edges = await (from e in _context.Edges
+                               where e.fromNodeID == ID
+                               select new EdgeDTO
+                               (
+                                   e.edgeID,
+                                   e.fromNodeID,
+                                   e.toNodeID
+                                   )).ToListAsync();
+            return edges;
+        }
+
+        public Task getEdgesRelatedToNodeId()
+        {
+            throw new NotImplementedException();
         }
     }
 }

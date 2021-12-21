@@ -10,20 +10,19 @@ namespace iLit.API
 {
     public static class SeedExtensions
     {
-        public static IHost Seed(this IHost host) //IHost is a reference to where our program is hosted
+        public static async Task<IHost> SeedAsync(this IHost host)
         {
-            using (var scope = host.Services.CreateScope())
-            {
-                var context = scope.ServiceProvider.GetService<iLitContext>();
+            using (var scope = host.Services.CreateScope()) {
+                var context = scope.ServiceProvider.GetRequiredService<iLitContext>();
 
-                SeediLit(context);//Seeding the db
+                await SeediLitAsync(context);
             }
             return host;
         }
 
-        private static void SeediLit(IiLitContext context)
+        private static async Task SeediLitAsync(IiLitContext context)
         {
-            /*var edge1 = new Edge
+            var edge1 = new Edge
             {
                 fromNodeID = 1,
                 toNodeID = 2
@@ -49,7 +48,7 @@ namespace iLit.API
             };
             context.Nodes.AddRange(node1, node2, node3);
 
-            context.SaveChanges();*/
+            await context.SaveChangesAsync();
         }
     }
 }

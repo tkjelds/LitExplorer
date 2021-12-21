@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLit.API", "iLit.API\iLit.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLit.API.Tests", "iLit.API.Tests\iLit.API.Tests.csproj", "{DB19B278-4BA0-42BF-A508-7C0AD469F1CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp", "BlazorApp\BlazorApp.csproj", "{A935BB22-5186-4974-8BC4-68F680DA8F51}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAssembly", "BlazorWebAssembly\BlazorWebAssembly.csproj", "{FD18ABED-F0EA-414B-A838-8BE2DE7D59BF}"
 EndProject
 Global

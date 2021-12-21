@@ -1,3 +1,4 @@
+using iLit.API;
 using iLit.Core;
 using iLit.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -78,6 +79,10 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
+
+/*if (!app.Environment.IsEnvironment("Integration")) {
+    await app.SeedAsync();
+}*/
 
 app.Run();
 

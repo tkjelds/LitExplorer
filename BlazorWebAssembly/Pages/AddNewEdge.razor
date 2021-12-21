@@ -1,24 +1,92 @@
 @page "/addNewEdgeDebug"
-@using System.Text.Json
-@using System.Text.Json.Serialization;
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
     <h3>Choose 2 nodes to bind an edge between</h3>
-<button class="btn btn-success" @onclick="(() => doSomething())">Add new edge</button>
 
-
+<EditForm Model ="@edge" OnValidSubmit="@doNothing"> 
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    @if (nodes == null)
+    {
+    <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Nodes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var node in nodes)
+            {
+                <tr>
+                    <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => setFromNode(@node))">Set as node from</button>   <button class="btn btn-info" @onclick="@(() => setToNode(@node))">Set as node to</button></td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    }
+    <div class="form-group">
+    <br />
+    <text>Chosen from node: @nodeFromTitle</text>
+    <br />
+    <text2>Chosen to node: @nodeToTitle</text2>
+    <br />
+    <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create edge</button>
+    </div>
+    <p hidden="@(!isFailed)">Something went wrong :(</p>
+    <p hidden="@(!isSuccesful)">Edge between @nodeFromTitle and @nodeToTitle added succesfully</p>
+</EditForm>
 
 
 
 @code {
-    IEnumerable<Node> nodes;
-    
-    string[] names = {"title3", "title2", "title1"};
-    string[] names2 = {"title1", "title2", "title3"};
+    private bool isFailed {get; set;} = false;
+    private bool isSuccesful {get; set;} = false;
+    private EdgeCreateDTO edge {get; set;} = new();
 
-    public void doSomething() {
-        //kek
+    private string nodeFromTitle {get;set;} = "";
+    private string nodeToTitle {get;set;} = "";
+    private int nodeFromID {get; set;}
+    private int nodeToID {get; set;}
+
+    private NodeDTO[]? nodes {get; set;} 
+    protected override async Task OnInitializedAsync()  
+    {
+        nodes = await Http.GetFromJsonAsync<NodeDTO[]>("api/Node");
     }
-    public class Node {
-        [JsonPropertyName("name")]
-        public string name { get; set; }
+
+    private void doNothing() {
+        Console.WriteLine("Edge: " + edge);
+        Console.WriteLine("isFailed = " + isFailed + ", isSuccesful = " + isSuccesful);
     }
+
+    private void setFromNode(NodeDTO node) {
+        nodeFromID = node.id;
+        nodeFromTitle = node.title;
+    }
+
+    private void setToNode(NodeDTO node) {
+        nodeToID = node.id;
+        nodeToTitle = node.title;
+    }
+    private async Task HandleValidSubmit() {
+        Console.WriteLine("HandleValidSubmit() has been invoked.");
+        edge.nodeFromID = nodeFromID;
+        edge.nodeToID = nodeToID;
+        var response = await Http.PostAsJsonAsync("api/Edge", edge);
+        if (response.IsSuccessStatusCode) {
+            Console.WriteLine("Succes!");
+            isSuccesful = true;
+            isFailed = false;
+
+        } else {
+            Console.WriteLine("Oh no it failed!");
+            isFailed = true;
+            isSuccesful = false;
+        }
+    } 
 }

@@ -16,7 +16,7 @@
     <button type="submit" class="btn btn-success" @onclick="doNothing">Create</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
-    <p hidden="@(!isSuccesful)">Node added succesfully</p>
+    <p hidden="@(!isSuccesful)">Node "@node.title" added succesfully</p>
 </EditForm>
 
 
@@ -31,10 +31,8 @@
     private NodeCreateDTO node = new();
 
     private void doNothing() {
-        Console.WriteLine("Node title: "+node.title);
+        Console.WriteLine("Node title: " + node.title);
         Console.WriteLine("isFailed = " + isFailed + ", isSuccesful = " + isSuccesful);
-        
-
     }
 
     private async Task HandleValidSubmit() {
@@ -43,10 +41,12 @@
         if (response.IsSuccessStatusCode) {
             Console.WriteLine("Succes!");
             isSuccesful = true;
+            isFailed = false;
 
         } else {
             Console.WriteLine("Oh no it failed!");
             isFailed = true;
+            isSuccesful = false;
         }
     } 
 }
