@@ -2,16 +2,15 @@
 @page "/c"
 
 <div class="circles">
-    <!--input type="string" @bind="@title" /!-->
     @for (int i = 0; i < strings.Count; i++)
-    //@for (int i = 0; i < strings.Count; i++)
     {
         var id = i;
         <div class="circle">
-            <button class="circleButton" @onclick="(() => newText(id))">@strings[id]</button !-->
+            <button class="circleButton" @onclick="(() => newText(id))">@strings[id]</button>
+            <div class="edgeInfo" style=@display[id]></div>
         </div>
 
-}
+    }
 </div>
 
 <style>
@@ -22,6 +21,12 @@
         color: black;
         fill: blue;
         background-color: #2fb7d0;
+    }
+    .edgeInfo {
+        height: 200px;
+        width: 200px;
+        border-style: solid;
+        border-color: black;
     }
     .circles {
         display: grid;
@@ -36,13 +41,16 @@
 
 @code {
     string color { get; set; } = "#2fb7d0";
-
-    string title { get; set; } = "Untitled";
-
     List<string> strings = new List<string> {"no", "silver", "bullet", "a", "b", "c", "d", "e"};
+    List<string> display = new List<string> {"display:none","display:none","display:none","display:none","display:none","display:none","display:none","display:none"};
+
 
     private void newText(int id) {
-        strings[id] = title;
+        if(display[id] == "display:none") {
+            display[id] = "display:block";
+        } else {
+            display[id] = "display:none";
+        }
     }
    
 }
