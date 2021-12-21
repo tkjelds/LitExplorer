@@ -2,7 +2,7 @@
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 
-<h3>New node</h3>
+<h3>New Article</h3>
 
 <EditForm Model ="@node" OnValidSubmit="@HandleValidSubmit"> 
     <DataAnnotationsValidator />
@@ -16,7 +16,7 @@
     <button type="submit" class="btn btn-success" @onclick="doNothing">Create</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
-    <p hidden="@(!isSuccesful)">Node "@node.title" added succesfully</p>
+    <p hidden="@(!isSuccesful)">Article "@node.title" added succesfully</p>
 </EditForm>
 
 

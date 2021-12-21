@@ -1,7 +1,7 @@
 @page "/addNewEdgeDebug"
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
-    <h3>Choose 2 nodes to bind an edge between</h3>
+    <h3>Choose Two Articles To Create A Reference Between</h3>
 
 <EditForm Model ="@edge" OnValidSubmit="@doNothing"> 
     <DataAnnotationsValidator />
@@ -15,7 +15,7 @@
         <table class="table">
         <thead>
             <tr>
-                <th>Nodes</th>
+                <th>Articles</th>
                 <th></th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
             @foreach (var node in nodes)
             {
                 <tr>
-                    <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => setFromNode(@node))">Set as node from</button>   <button class="btn btn-info" @onclick="@(() => setToNode(@node))">Set as node to</button></td>
+                    <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => setFromNode(@node))">Set as reference from</button>   <button class="btn btn-info" @onclick="@(() => setToNode(@node))">Set as reference to</button></td>
                 </tr>
             }
         </tbody>
@@ -31,14 +31,14 @@
     }
     <div class="form-group">
     <br />
-    <text>Chosen from node: @nodeFromTitle</text>
+    <text>Chosen from-article: @nodeFromTitle</text>
     <br />
-    <text2>Chosen to node: @nodeToTitle</text2>
+    <text2>Chosen to-article: @nodeToTitle</text2>
     <br />
-    <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create edge</button>
+    <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create Reference</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
-    <p hidden="@(!isSuccesful)">Edge between @nodeFromTitle and @nodeToTitle added succesfully</p>
+    <p hidden="@(!isSuccesful)">Reference between @nodeFromTitle and @nodeToTitle added succesfully</p>
 </EditForm>
 
 
