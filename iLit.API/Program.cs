@@ -1,15 +1,10 @@
 using iLit.API;
 using iLit.Core;
 using iLit.Infrastructure;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
-using System;
 /*using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -17,32 +12,47 @@ using System.Threading.Tasks;
 
 namespace iLit.API
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            //CreateHostBuilder(args).Build().Run();
-            var hostBuilder = CreateHostBuilder(args).Build();
+public class Program
+{
+public static void Main(string[] args)
+{
+//CreateHostBuilder(args).Build().Run();
+var hostBuilder = CreateHostBuilder(args).Build();
 
-            //hostBuilder.Seed(); //<- from our seed extension class. 
+//hostBuilder.Seed(); //<- from our seed extension class. 
 
-            hostBuilder.Run();
-        }
+hostBuilder.Run();
+}
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-        //configureappconfiguration - to expose/use secrets from folder/text file in linux. optional on windows?
-    }
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+Host.CreateDefaultBuilder(args)
+.ConfigureWebHostDefaults(webBuilder =>
+{
+webBuilder.UseStartup<Startup>();
+});
+//configureappconfiguration - to expose/use secrets from folder/text file in linux. optional on windows?
+}
 }*/
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddKeyPerFile("/run/secrets", optional: true);
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddMicrosoftIdentityWebApi(options =>
+                {
+                    builder.Configuration.Bind("AzureAd", options);
+                },
+        options => {
+            builder.Configuration.Bind("AzureAd", options);
+        });
+
+builder.Services.Configure<JwtBearerOptions>(
+    JwtBearerDefaults.AuthenticationScheme, options => {
+        options.TokenValidationParameters.NameClaimType = "name";
+    });
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => {
