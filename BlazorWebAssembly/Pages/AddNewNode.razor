@@ -8,18 +8,25 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
     <div class="form-group">
-        <label for="NodeTitle">Title</label>
-        <InputText id="Title" @bind-Value="node.title" class="form-control" />
-    </div>
+        <InputText id="Title" @bind-Value="node.title" class="form-control" placeholder="Title"/>
+    <!--/div>
     <div class="form-group">
-    <br />
-    <button type="submit" class="btn btn-success" @onclick="doNothing">Create</button>
+    <br /!-->
+        <button type="submit" class="btn btn-success" @onclick="doNothing">Create</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
     <p hidden="@(!isSuccesful)">Article "@node.title" added succesfully</p>
 </EditForm>
 
-
+<style>
+    .form-group {
+        display: flex;
+        margin: 3px;
+    }
+    .form-control {
+        width: 90%;
+    }
+</style>
 
 
 

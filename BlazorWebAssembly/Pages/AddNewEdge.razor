@@ -35,11 +35,20 @@
     <br />
     <text2>Chosen to-article: @nodeToTitle</text2>
     <br />
-    <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create Reference</button>
+    <button type="submit" class="btn btn-success" @onclick="HandleValidSubmit">Create</button>
     </div>
     <p hidden="@(!isFailed)">Something went wrong :(</p>
     <p hidden="@(!isSuccesful)">Reference between @nodeFromTitle and @nodeToTitle added succesfully</p>
 </EditForm>
+
+<style>
+    .btn-success {
+        background-color: #b6b5b3;
+        color: white;
+        width: 100px;
+        height: 40px;
+        }
+</style>
 
 
 
