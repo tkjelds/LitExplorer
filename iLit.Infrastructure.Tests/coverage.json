@@ -1,0 +1,675 @@
+{
+  "iLit.Core.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\Option.cs": {
+      "Option`1": {
+        "T Option`1::get_Value()": {
+          "Lines": {
+            "8": 3
+          },
+          "Branches": [
+            {
+              "Line": 8,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 8,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean Option`1::get_IsNone()": {
+          "Lines": {
+            "10": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean Option`1::get_IsSome()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "T Option`1::op_Implicit(Option`1<T>)": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "Option`1<T> Option`1::op_Implicit(T)": {
+          "Lines": {
+            "21": 5
+          },
+          "Branches": []
+        },
+        "System.Void Option`1::.ctor(T)": {
+          "Lines": {
+            "15": 5,
+            "16": 5,
+            "17": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\EdgeDTO.cs": {
+      "iLit.Core.EdgeDTO": {
+        "System.Int32 iLit.Core.EdgeDTO::get_edgeID()": {
+          "Lines": {
+            "6": 72
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Core.EdgeCreateDTO": {
+        "System.Int32 iLit.Core.EdgeCreateDTO::get_nodeFromID()": {
+          "Lines": {
+            "11": 6
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Core.EdgeCreateDTO::get_nodeToID()": {
+          "Lines": {
+            "14": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\NodeDTO.cs": {
+      "iLit.Core.NodeDTO": {
+        "System.Int32 iLit.Core.NodeDTO::get_id()": {
+          "Lines": {
+            "7": 51
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Core.NodeCreateDTO": {
+        "System.String iLit.Core.NodeCreateDTO::get_title()": {
+          "Lines": {
+            "13": 6
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "iLit.Infrastructure.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Edge.cs": {
+      "iLit.Infrastructure.Edge": {
+        "System.Int32 iLit.Infrastructure.Edge::get_edgeID()": {
+          "Lines": {
+            "9": 28
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Infrastructure.Edge::get_fromNodeID()": {
+          "Lines": {
+            "11": 28
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Infrastructure.Edge::get_toNodeID()": {
+          "Lines": {
+            "13": 28
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\EdgeRepository.cs": {
+      "iLit.Infrastructure.EdgeRepository": {
+        "System.Threading.Tasks.Task iLit.Infrastructure.EdgeRepository::getEdgesRelatedToNodeId()": {
+          "Lines": {
+            "127": 0,
+            "128": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.EdgeRepository::.ctor(iLit.Infrastructure.iLitContext)": {
+          "Lines": {
+            "16": 15,
+            "17": 15,
+            "18": 15,
+            "19": 15
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<createNewEdge>d__2": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<createNewEdge>d__2::MoveNext()": {
+          "Lines": {
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 3,
+            "27": 3,
+            "29": 3,
+            "30": 3,
+            "31": 3,
+            "32": 1,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "39": 3
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<deleteEdge>d__3": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<deleteEdge>d__3::MoveNext()": {
+          "Lines": {
+            "42": 5,
+            "43": 5,
+            "45": 5,
+            "46": 1,
+            "47": 1,
+            "50": 4,
+            "51": 4,
+            "52": 4,
+            "53": 5
+          },
+          "Branches": [
+            {
+              "Line": 45,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 45,
+              "Offset": 198,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<deleteEdgesGivenNodeId>d__4": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<deleteEdgesGivenNodeId>d__4::MoveNext()": {
+          "Lines": {
+            "56": 3,
+            "57": 3,
+            "58": 3,
+            "59": 3,
+            "61": 3,
+            "62": 1,
+            "63": 1,
+            "66": 12,
+            "67": 3,
+            "68": 3,
+            "69": 3,
+            "71": 2,
+            "72": 3
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 391,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 391,
+              "EndOffset": 401,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 66,
+              "Offset": 586,
+              "EndOffset": 433,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 66,
+              "Offset": 586,
+              "EndOffset": 591,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getAllEdges>d__5": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getAllEdges>d__5::MoveNext()": {
+          "Lines": {
+            "75": 3,
+            "76": 3,
+            "77": 3,
+            "78": 3,
+            "79": 3,
+            "80": 3,
+            "81": 3,
+            "82": 3,
+            "83": 3,
+            "84": 3
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdge>d__6": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdge>d__6::MoveNext()": {
+          "Lines": {
+            "87": 2,
+            "88": 2,
+            "89": 2,
+            "90": 2,
+            "91": 2,
+            "92": 2,
+            "93": 2,
+            "94": 2,
+            "95": 2,
+            "97": 2,
+            "98": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdgesRelatedFromNodeId>d__8": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdgesRelatedFromNodeId>d__8::MoveNext()": {
+          "Lines": {
+            "114": 2,
+            "115": 2,
+            "116": 2,
+            "117": 2,
+            "118": 2,
+            "119": 2,
+            "120": 2,
+            "121": 2,
+            "122": 2,
+            "123": 2,
+            "124": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdgesRelatedToNodeId>d__7": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdgesRelatedToNodeId>d__7::MoveNext()": {
+          "Lines": {
+            "101": 1,
+            "102": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "109": 1,
+            "110": 1,
+            "111": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\iLitContext.cs": {
+      "iLit.Infrastructure.iLitContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<iLit.Infrastructure.Node> iLit.Infrastructure.iLitContext::get_Nodes()": {
+          "Lines": {
+            "9": 55
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<iLit.Infrastructure.Edge> iLit.Infrastructure.iLitContext::get_Edges()": {
+          "Lines": {
+            "10": 55
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 2
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::.ctor()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<iLit.Infrastructure.iLitContext>)": {
+          "Lines": {
+            "13": 20,
+            "14": 20,
+            "15": 20
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Node.cs": {
+      "iLit.Infrastructure.Node": {
+        "System.Int32 iLit.Infrastructure.Node::get_ID()": {
+          "Lines": {
+            "9": 54
+          },
+          "Branches": []
+        },
+        "System.String iLit.Infrastructure.Node::get_title()": {
+          "Lines": {
+            "13": 57
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\NodeRepository.cs": {
+      "iLit.Infrastructure.NodeRepository": {
+        "System.Void iLit.Infrastructure.NodeRepository::.ctor(iLit.Infrastructure.iLitContext)": {
+          "Lines": {
+            "16": 10,
+            "17": 10,
+            "18": 10,
+            "19": 10
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<createNewNode>d__2": {
+        "System.Void iLit.Infrastructure.NodeRepository/<createNewNode>d__2::MoveNext()": {
+          "Lines": {
+            "22": 3,
+            "24": 3,
+            "26": 3,
+            "27": 3,
+            "28": 3,
+            "29": 2,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "36": 3
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<deleteNode>d__3": {
+        "System.Void iLit.Infrastructure.NodeRepository/<deleteNode>d__3::MoveNext()": {
+          "Lines": {
+            "39": 4,
+            "40": 4,
+            "41": 4,
+            "42": 1,
+            "44": 3,
+            "45": 3,
+            "47": 3,
+            "48": 3,
+            "50": 3,
+            "51": 1,
+            "52": 1,
+            "54": 2,
+            "55": 4
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 212,
+              "EndOffset": 221,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 50,
+              "Offset": 532,
+              "EndOffset": 534,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 50,
+              "Offset": 532,
+              "EndOffset": 539,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<getAllNodes>d__4": {
+        "System.Void iLit.Infrastructure.NodeRepository/<getAllNodes>d__4::MoveNext()": {
+          "Lines": {
+            "58": 2,
+            "59": 2,
+            "60": 2,
+            "61": 2,
+            "62": 2,
+            "63": 2,
+            "64": 2,
+            "65": 2,
+            "66": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<getNode>d__5": {
+        "System.Void iLit.Infrastructure.NodeRepository/<getNode>d__5::MoveNext()": {
+          "Lines": {
+            "69": 3,
+            "70": 3,
+            "71": 3,
+            "72": 3,
+            "73": 3,
+            "74": 3,
+            "75": 3,
+            "76": 3,
+            "77": 3,
+            "78": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\20211215134852_init.cs": {
+      "iLit.Infrastructure.Migrations.init": {
+        "System.Void iLit.Infrastructure.Migrations.init::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.Migrations.init::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\20211215134852_init.Designer.cs": {
+      "iLit.Infrastructure.Migrations.init": {
+        "System.Void iLit.Infrastructure.Migrations.init::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "66": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\iLitContextModelSnapshot.cs": {
+      "iLit.Infrastructure.Migrations.iLitContextModelSnapshot": {
+        "System.Void iLit.Infrastructure.Migrations.iLitContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "14": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
