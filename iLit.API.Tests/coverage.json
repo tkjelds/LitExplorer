@@ -1,0 +1,2521 @@
+{
+  "BlazorWebAssembly.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Program.cs": {
+      "Program/<<Main>$>d__0": {
+        "System.Void Program/<<Main>$>d__0::MoveNext()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "12": 0,
+            "13": 0,
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\App.razor": {
+      "BlazorWebAssembly.App/<>c__DisplayClass0_1": {
+        "System.Void BlazorWebAssembly.App/<>c__DisplayClass0_1::<BuildRenderTree>b__5(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "10": 0,
+            "12": 0,
+            "14": 0
+          },
+          "Branches": [
+            {
+              "Line": 7,
+              "Offset": 27,
+              "EndOffset": 29,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 7,
+              "Offset": 27,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Shared\\LoginDisplay.razor": {
+      "BlazorWebAssembly.Shared.LoginDisplay/<>c__DisplayClass0_0": {
+        "System.Void BlazorWebAssembly.Shared.LoginDisplay/<>c__DisplayClass0_0::<BuildRenderTree>b__2(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Shared.LoginDisplay/<BeginLogout>d__1": {
+        "System.Void BlazorWebAssembly.Shared.LoginDisplay/<BeginLogout>d__1::MoveNext()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Shared\\RedirectToLogin.razor": {
+      "BlazorWebAssembly.Shared.RedirectToLogin": {
+        "System.Void BlazorWebAssembly.Shared.RedirectToLogin::OnInitialized()": {
+          "Lines": {
+            "5": 0,
+            "6": 0,
+            "7": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Shared\\MainLayout.razor": {
+      "BlazorWebAssembly.Shared.MainLayout": {
+        "System.Void BlazorWebAssembly.Shared.MainLayout::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\AddNewEdge.razor": {
+      "BlazorWebAssembly.Pages.AddNewEdge": {
+        "System.Boolean BlazorWebAssembly.Pages.AddNewEdge::get_isFailed()": {
+          "Lines": {
+            "63": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.AddNewEdge::get_isSuccesful()": {
+          "Lines": {
+            "64": 0
+          },
+          "Branches": []
+        },
+        "iLit.Core.EdgeCreateDTO BlazorWebAssembly.Pages.AddNewEdge::get_edge()": {
+          "Lines": {
+            "65": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.AddNewEdge::get_nodeFromTitle()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.AddNewEdge::get_nodeToTitle()": {
+          "Lines": {
+            "68": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 BlazorWebAssembly.Pages.AddNewEdge::get_nodeFromID()": {
+          "Lines": {
+            "69": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 BlazorWebAssembly.Pages.AddNewEdge::get_nodeToID()": {
+          "Lines": {
+            "70": 0
+          },
+          "Branches": []
+        },
+        "iLit.Core.NodeDTO[] BlazorWebAssembly.Pages.AddNewEdge::get_nodes()": {
+          "Lines": {
+            "72": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge::doNothing()": {
+          "Lines": {
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0
+          },
+          "Branches": [
+            {
+              "Line": 79,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 13,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge::setFromNode(iLit.Core.NodeDTO)": {
+          "Lines": {
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge::setToNode(iLit.Core.NodeDTO)": {
+          "Lines": {
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge::<BuildRenderTree>b__0_1(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "12": 0,
+            "14": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "28": 0,
+            "31": 0,
+            "34": 0,
+            "35": 0,
+            "40": 0
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 55,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 465,
+              "EndOffset": 154,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 465,
+              "EndOffset": 470,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "BlazorWebAssembly.Pages.AddNewEdge/<HandleValidSubmit>d__37": {
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge/<HandleValidSubmit>d__37::MoveNext()": {
+          "Lines": {
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 256,
+              "EndOffset": 258,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 101,
+              "Offset": 256,
+              "EndOffset": 299,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "BlazorWebAssembly.Pages.AddNewEdge/<OnInitializedAsync>d__33": {
+        "System.Void BlazorWebAssembly.Pages.AddNewEdge/<OnInitializedAsync>d__33::MoveNext()": {
+          "Lines": {
+            "74": 0,
+            "75": 0,
+            "76": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\AddNewNode.razor": {
+      "BlazorWebAssembly.Pages.AddNewNode": {
+        "System.Boolean BlazorWebAssembly.Pages.AddNewNode::get_isFailed()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.AddNewNode::get_isSuccesful()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewNode::doNothing()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewNode::<BuildRenderTree>b__0_1(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.AddNewNode::.ctor()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.AddNewNode/<HandleValidSubmit>d__11": {
+        "System.Void BlazorWebAssembly.Pages.AddNewNode/<HandleValidSubmit>d__11::MoveNext()": {
+          "Lines": {
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 197,
+              "EndOffset": 199,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 197,
+              "EndOffset": 240,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\Authentication.razor": {
+      "BlazorWebAssembly.Pages.Authentication": {
+        "System.String BlazorWebAssembly.Pages.Authentication::get_Action()": {
+          "Lines": {
+            "6": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\Circle.razor": {
+      "BlazorWebAssembly.Pages.Circle": {
+        "System.Void BlazorWebAssembly.Pages.Circle::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "7": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "15": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "50": 0,
+            "51": 0
+          },
+          "Branches": [
+            {
+              "Line": 7,
+              "Offset": 43,
+              "EndOffset": 45,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 7,
+              "Offset": 43,
+              "EndOffset": 65,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 744,
+              "EndOffset": 73,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 459,
+              "EndOffset": 409,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 459,
+              "EndOffset": 461,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 670,
+              "EndOffset": 620,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 670,
+              "EndOffset": 672,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 744,
+              "EndOffset": 749,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            }
+          ]
+        },
+        "iLit.Core.NodeDTO[] BlazorWebAssembly.Pages.Circle::get_nodes()": {
+          "Lines": {
+            "82": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.Circle::get_color()": {
+          "Lines": {
+            "99": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 BlazorWebAssembly.Pages.Circle::get_index()": {
+          "Lines": {
+            "101": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Circle::displayAllNone()": {
+          "Lines": {
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0
+          },
+          "Branches": [
+            {
+              "Line": 106,
+              "Offset": 44,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 106,
+              "Offset": 44,
+              "EndOffset": 46,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void BlazorWebAssembly.Pages.Circle::toggleEdgeList(System.Int32)": {
+          "Lines": {
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0
+          },
+          "Branches": [
+            {
+              "Line": 112,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 112,
+              "Offset": 25,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void BlazorWebAssembly.Pages.Circle::.ctor()": {
+          "Lines": {
+            "83": 0,
+            "103": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/NodeObject": {
+        "iLit.Core.NodeDTO BlazorWebAssembly.Pages.Circle/NodeObject::get_nodenode()": {
+          "Lines": {
+            "120": 0
+          },
+          "Branches": []
+        },
+        "System.Net.Http.HttpClient BlazorWebAssembly.Pages.Circle/NodeObject::get_Http()": {
+          "Lines": {
+            "121": 0
+          },
+          "Branches": []
+        },
+        "iLit.Core.EdgeDTO[] BlazorWebAssembly.Pages.Circle/NodeObject::get_edgesTo()": {
+          "Lines": {
+            "122": 0
+          },
+          "Branches": []
+        },
+        "iLit.Core.EdgeDTO[] BlazorWebAssembly.Pages.Circle/NodeObject::get_edgesFrom()": {
+          "Lines": {
+            "123": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.HashSet`1<System.String> BlazorWebAssembly.Pages.Circle/NodeObject::get_edgeToString()": {
+          "Lines": {
+            "125": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.HashSet`1<System.String> BlazorWebAssembly.Pages.Circle/NodeObject::get_edgeFromString()": {
+          "Lines": {
+            "126": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.Int32> BlazorWebAssembly.Pages.Circle/NodeObject::get_edgeToID()": {
+          "Lines": {
+            "127": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<System.Int32> BlazorWebAssembly.Pages.Circle/NodeObject::get_edgeFromID()": {
+          "Lines": {
+            "128": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Circle/NodeObject::.ctor(iLit.Core.NodeDTO,System.Net.Http.HttpClient)": {
+          "Lines": {
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/NodeObject/<<makeEdgeList>g__getNodeTitleWithID|35_0>d": {
+        "System.Void BlazorWebAssembly.Pages.Circle/NodeObject/<<makeEdgeList>g__getNodeTitleWithID|35_0>d::MoveNext()": {
+          "Lines": {
+            "166": 0,
+            "169": 0,
+            "170": 0,
+            "171": 0,
+            "172": 0,
+            "173": 0,
+            "174": 0,
+            "176": 0,
+            "177": 0,
+            "178": 0,
+            "179": 0,
+            "180": 0,
+            "181": 0,
+            "182": 0
+          },
+          "Branches": [
+            {
+              "Line": 169,
+              "Offset": 37,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 170,
+              "Offset": 326,
+              "EndOffset": 77,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 170,
+              "Offset": 326,
+              "EndOffset": 331,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 169,
+              "Offset": 37,
+              "EndOffset": 369,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 382,
+              "EndOffset": 387,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 177,
+              "Offset": 675,
+              "EndOffset": 423,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 177,
+              "Offset": 675,
+              "EndOffset": 680,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 176,
+              "Offset": 382,
+              "EndOffset": 718,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/NodeObject/<getEdgesFrom>d__34": {
+        "System.Void BlazorWebAssembly.Pages.Circle/NodeObject/<getEdgesFrom>d__34::MoveNext()": {
+          "Lines": {
+            "141": 0,
+            "142": 0,
+            "143": 0,
+            "144": 0,
+            "146": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/NodeObject/<getEdgesTo>d__33": {
+        "System.Void BlazorWebAssembly.Pages.Circle/NodeObject/<getEdgesTo>d__33::MoveNext()": {
+          "Lines": {
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/NodeObject/<makeEdgeList>d__35": {
+        "System.Void BlazorWebAssembly.Pages.Circle/NodeObject/<makeEdgeList>d__35::MoveNext()": {
+          "Lines": {
+            "148": 0,
+            "149": 0,
+            "150": 0,
+            "151": 0,
+            "152": 0,
+            "153": 0,
+            "154": 0,
+            "155": 0,
+            "156": 0,
+            "157": 0,
+            "158": 0,
+            "159": 0,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "164": 0,
+            "183": 0
+          },
+          "Branches": [
+            {
+              "Line": 151,
+              "Offset": 281,
+              "EndOffset": 286,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 152,
+              "Offset": 529,
+              "EndOffset": 317,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 152,
+              "Offset": 529,
+              "EndOffset": 534,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 151,
+              "Offset": 281,
+              "EndOffset": 542,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 158,
+              "Offset": 560,
+              "EndOffset": 565,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 159,
+              "Offset": 808,
+              "EndOffset": 596,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 159,
+              "Offset": 808,
+              "EndOffset": 813,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 158,
+              "Offset": 560,
+              "EndOffset": 821,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "BlazorWebAssembly.Pages.Circle/<OnInitializedAsync>d__6": {
+        "System.Void BlazorWebAssembly.Pages.Circle/<OnInitializedAsync>d__6::MoveNext()": {
+          "Lines": {
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "98": 0
+          },
+          "Branches": [
+            {
+              "Line": 89,
+              "Offset": 205,
+              "EndOffset": 210,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 477,
+              "EndOffset": 253,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 91,
+              "Offset": 477,
+              "EndOffset": 482,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 89,
+              "Offset": 205,
+              "EndOffset": 490,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\DeleteEdge.razor": {
+      "BlazorWebAssembly.Pages.DeleteEdge": {
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "9": 0,
+            "11": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "28": 0
+          },
+          "Branches": [
+            {
+              "Line": 6,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 6,
+              "Offset": 25,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 363,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 363,
+              "EndOffset": 368,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        },
+        "iLit.Core.EdgeDTO[] BlazorWebAssembly.Pages.DeleteEdge::get_edges()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<BlazorWebAssembly.Pages.DeleteEdge/EdgeObject> BlazorWebAssembly.Pages.DeleteEdge::get_edgeobs()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.DeleteEdge::get_isFailed()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.DeleteEdge::get_isSuccesful()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteEdge/EdgeObject": {
+        "iLit.Core.EdgeDTO BlazorWebAssembly.Pages.DeleteEdge/EdgeObject::get_edgedto()": {
+          "Lines": {
+            "65": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.DeleteEdge/EdgeObject::get_nodeFromTitle()": {
+          "Lines": {
+            "67": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.DeleteEdge/EdgeObject::get_nodeToTitle()": {
+          "Lines": {
+            "68": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge/EdgeObject::.ctor(iLit.Core.EdgeDTO,System.Net.Http.HttpClient)": {
+          "Lines": {
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "74": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteEdge/EdgeObject/<setNodeFrom>d__14": {
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge/EdgeObject/<setNodeFrom>d__14::MoveNext()": {
+          "Lines": {
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteEdge/EdgeObject/<setNodeTo>d__15": {
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge/EdgeObject/<setNodeTo>d__15::MoveNext()": {
+          "Lines": {
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteEdge/<OnInitializedAsync>d__17": {
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge/<OnInitializedAsync>d__17::MoveNext()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 208,
+              "EndOffset": 213,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 588,
+              "EndOffset": 244,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 588,
+              "EndOffset": 593,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 208,
+              "EndOffset": 601,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteEdge/<deleteEdge>d__18": {
+        "System.Void BlazorWebAssembly.Pages.DeleteEdge/<deleteEdge>d__18::MoveNext()": {
+          "Lines": {
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0
+          },
+          "Branches": [
+            {
+              "Line": 54,
+              "Offset": 222,
+              "EndOffset": 224,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 54,
+              "Offset": 222,
+              "EndOffset": 254,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\DeleteNode.razor": {
+      "BlazorWebAssembly.Pages.DeleteNode": {
+        "System.Void BlazorWebAssembly.Pages.DeleteNode::BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "9": 0,
+            "11": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "25": 0,
+            "28": 0,
+            "31": 0
+          },
+          "Branches": [
+            {
+              "Line": 6,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 6,
+              "Offset": 25,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 323,
+              "EndOffset": 120,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 323,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        },
+        "iLit.Core.NodeDTO[] BlazorWebAssembly.Pages.DeleteNode::get_nodes()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.String BlazorWebAssembly.Pages.DeleteNode::get_deletedNode()": {
+          "Lines": {
+            "36": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.DeleteNode::get_isFailed()": {
+          "Lines": {
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.DeleteNode::get_isSuccesful()": {
+          "Lines": {
+            "38": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteNode/<OnInitializedAsync>d__17": {
+        "System.Void BlazorWebAssembly.Pages.DeleteNode/<OnInitializedAsync>d__17::MoveNext()": {
+          "Lines": {
+            "40": 0,
+            "41": 0,
+            "42": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlazorWebAssembly.Pages.DeleteNode/<deleteNode>d__18": {
+        "System.Void BlazorWebAssembly.Pages.DeleteNode/<deleteNode>d__18::MoveNext()": {
+          "Lines": {
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 222,
+              "EndOffset": 224,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 222,
+              "EndOffset": 277,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\Index.razor": {
+      "BlazorWebAssembly.Pages.Index": {
+        "System.Boolean BlazorWebAssembly.Pages.Index::get_hideNewNode()": {
+          "Lines": {
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.Index::get_hideNewEdge()": {
+          "Lines": {
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.Index::get_hideEdgeDelete()": {
+          "Lines": {
+            "28": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean BlazorWebAssembly.Pages.Index::get_hideNodeDelete()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Index::ToggleNewNode()": {
+          "Lines": {
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Index::ToggleNewEdge()": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Index::ToggleNodeDelete()": {
+          "Lines": {
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlazorWebAssembly.Pages.Index::ToggleEdgeDelete()": {
+          "Lines": {
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\BlazorWebAssembly\\Pages\\RefreshButton.razor": {
+      "BlazorWebAssembly.Pages.RefreshButton": {
+        "System.Void BlazorWebAssembly.Pages.RefreshButton::Refresh()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "iLit.API.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Program.cs": {
+      "Program/<<Main>$>d__0": {
+        "System.Void Program/<<Main>$>d__0::MoveNext()": {
+          "Lines": {
+            "9": 0,
+            "11": 0,
+            "13": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "40": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "49": 0,
+            "50": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "60": 0
+          },
+          "Branches": [
+            {
+              "Line": 56,
+              "Offset": 551,
+              "EndOffset": 553,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 551,
+              "EndOffset": 653,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Pages\\Error.cshtml": {
+      "AspNetCoreGeneratedDocument.Pages_Error/<<ExecuteAsync>b__12_1>d": {
+        "System.Void AspNetCoreGeneratedDocument.Pages_Error/<<ExecuteAsync>b__12_1>d::MoveNext()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "26": 0
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 43,
+              "EndOffset": 45,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 43,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Pages\\Error.cshtml.cs": {
+      "MyApp.Server.Pages.ErrorModel": {
+        "System.String MyApp.Server.Pages.ErrorModel::get_RequestId()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean MyApp.Server.Pages.ErrorModel::get_ShowRequestId()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void MyApp.Server.Pages.ErrorModel::OnGet()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 8,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 20,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void MyApp.Server.Pages.ErrorModel::.ctor(Microsoft.Extensions.Logging.ILogger`1<MyApp.Server.Pages.ErrorModel>)": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Extensions.cs": {
+      "iLit.API.Extensions": {
+        "Microsoft.AspNetCore.Mvc.IActionResult iLit.API.Extensions::ToActionResult(iLit.Core.Response)": {
+          "Lines": {
+            "13": 4,
+            "14": 4,
+            "15": 0,
+            "16": 2,
+            "17": 2,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 4
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 40,
+              "Path": 2,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 48,
+              "Path": 3,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 56,
+              "Path": 5,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 64,
+              "Path": 4,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 5,
+              "EndOffset": 72,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.ActionResult`1<T> iLit.API.Extensions::ToActionResult(Option`1<T>)": {
+          "Lines": {
+            "24": 4
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 7,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\SeedExtensions.cs": {
+      "iLit.API.SeedExtensions/<SeedAsync>d__0": {
+        "System.Void iLit.API.SeedExtensions/<SeedAsync>d__0::MoveNext()": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.SeedExtensions/<SeediLitAsync>d__1": {
+        "System.Void iLit.API.SeedExtensions/<SeediLitAsync>d__1::MoveNext()": {
+          "Lines": {
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 34,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 34,
+              "EndOffset": 57,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 60,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 60,
+              "EndOffset": 424,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\WeatherForecast.cs": {
+      "iLit.API.WeatherForecast": {
+        "System.DateTime iLit.API.WeatherForecast::get_Date()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.API.WeatherForecast::get_TemperatureC()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.API.WeatherForecast::get_TemperatureF()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String iLit.API.WeatherForecast::get_Summary()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Controllers\\EdgeController.cs": {
+      "iLit.API.Controllers.EdgeController": {
+        "System.Void iLit.API.Controllers.EdgeController::.ctor(Microsoft.Extensions.Logging.ILogger`1<iLit.API.Controllers.EdgeController>,iLit.Core.IEdgeRepository)": {
+          "Lines": {
+            "22": 7,
+            "23": 7,
+            "24": 7,
+            "25": 7,
+            "26": 7
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<Delete>d__8": {
+        "System.Void iLit.API.Controllers.EdgeController/<Delete>d__8::MoveNext()": {
+          "Lines": {
+            "78": 2,
+            "79": 2,
+            "80": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<Get>d__4": {
+        "System.Void iLit.API.Controllers.EdgeController/<Get>d__4::MoveNext()": {
+          "Lines": {
+            "46": 1,
+            "47": 1,
+            "48": 1
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<Get>d__7": {
+        "System.Void iLit.API.Controllers.EdgeController/<Get>d__7::MoveNext()": {
+          "Lines": {
+            "69": 2,
+            "70": 2,
+            "71": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<GetEdgesFromNodeId>d__6": {
+        "System.Void iLit.API.Controllers.EdgeController/<GetEdgesFromNodeId>d__6::MoveNext()": {
+          "Lines": {
+            "60": 0,
+            "61": 0,
+            "62": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<GetEdgesToNodeId>d__5": {
+        "System.Void iLit.API.Controllers.EdgeController/<GetEdgesToNodeId>d__5::MoveNext()": {
+          "Lines": {
+            "53": 0,
+            "54": 0,
+            "55": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.EdgeController/<Post>d__3": {
+        "System.Void iLit.API.Controllers.EdgeController/<Post>d__3::MoveNext()": {
+          "Lines": {
+            "33": 2,
+            "34": 2,
+            "36": 2,
+            "37": 1,
+            "38": 1,
+            "41": 1,
+            "42": 2
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 167,
+              "EndOffset": 169,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 167,
+              "EndOffset": 211,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Controllers\\NodeController.cs": {
+      "iLit.API.Controllers.NodeController": {
+        "System.Void iLit.API.Controllers.NodeController::.ctor(Microsoft.Extensions.Logging.ILogger`1<iLit.API.Controllers.NodeController>,iLit.Core.INodeRepository)": {
+          "Lines": {
+            "24": 7,
+            "25": 7,
+            "26": 7,
+            "27": 7,
+            "28": 7
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.NodeController/<Delete>d__6": {
+        "System.Void iLit.API.Controllers.NodeController/<Delete>d__6::MoveNext()": {
+          "Lines": {
+            "67": 2,
+            "68": 2,
+            "69": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.NodeController/<Get>d__4": {
+        "System.Void iLit.API.Controllers.NodeController/<Get>d__4::MoveNext()": {
+          "Lines": {
+            "49": 1,
+            "50": 1,
+            "51": 1
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.NodeController/<Get>d__5": {
+        "System.Void iLit.API.Controllers.NodeController/<Get>d__5::MoveNext()": {
+          "Lines": {
+            "58": 2,
+            "59": 2,
+            "60": 2
+          },
+          "Branches": []
+        }
+      },
+      "iLit.API.Controllers.NodeController/<Post>d__3": {
+        "System.Void iLit.API.Controllers.NodeController/<Post>d__3::MoveNext()": {
+          "Lines": {
+            "35": 2,
+            "36": 2,
+            "38": 2,
+            "39": 1,
+            "40": 1,
+            "43": 1,
+            "44": 2
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 167,
+              "EndOffset": 169,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 167,
+              "EndOffset": 211,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.API\\Controllers\\WeatherForecastController.cs": {
+      "iLit.API.Controllers.WeatherForecastController": {
+        "System.Collections.Generic.IEnumerable`1<iLit.API.WeatherForecast> iLit.API.Controllers.WeatherForecastController::Get()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.API.Controllers.WeatherForecastController::.ctor(Microsoft.Extensions.Logging.ILogger`1<iLit.API.Controllers.WeatherForecastController>)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.API.Controllers.WeatherForecastController::.cctor()": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "iLit.Core.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\Option.cs": {
+      "Option`1": {
+        "T Option`1::get_Value()": {
+          "Lines": {
+            "8": 2
+          },
+          "Branches": [
+            {
+              "Line": 8,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 8,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Option`1::get_IsNone()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Boolean Option`1::get_IsSome()": {
+          "Lines": {
+            "12": 4
+          },
+          "Branches": []
+        },
+        "T Option`1::op_Implicit(Option`1<T>)": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "Option`1<T> Option`1::op_Implicit(T)": {
+          "Lines": {
+            "21": 4
+          },
+          "Branches": []
+        },
+        "System.Void Option`1::.ctor(T)": {
+          "Lines": {
+            "15": 4,
+            "16": 4,
+            "17": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\EdgeDTO.cs": {
+      "iLit.Core.EdgeDTO": {
+        "System.Int32 iLit.Core.EdgeDTO::get_edgeID()": {
+          "Lines": {
+            "6": 9
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Core.EdgeCreateDTO": {
+        "System.Int32 iLit.Core.EdgeCreateDTO::get_nodeFromID()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Core.EdgeCreateDTO::get_nodeToID()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Core\\NodeDTO.cs": {
+      "iLit.Core.NodeDTO": {
+        "System.Int32 iLit.Core.NodeDTO::get_id()": {
+          "Lines": {
+            "7": 7
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Core.NodeCreateDTO": {
+        "System.String iLit.Core.NodeCreateDTO::get_title()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "iLit.Infrastructure.dll": {
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Edge.cs": {
+      "iLit.Infrastructure.Edge": {
+        "System.Int32 iLit.Infrastructure.Edge::get_edgeID()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Infrastructure.Edge::get_fromNodeID()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 iLit.Infrastructure.Edge::get_toNodeID()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\EdgeRepository.cs": {
+      "iLit.Infrastructure.EdgeRepository": {
+        "System.Threading.Tasks.Task iLit.Infrastructure.EdgeRepository::getEdgesRelatedToNodeId()": {
+          "Lines": {
+            "127": 0,
+            "128": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.EdgeRepository::.ctor(iLit.Infrastructure.iLitContext)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<createNewEdge>d__2": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<createNewEdge>d__2::MoveNext()": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "39": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<deleteEdge>d__3": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<deleteEdge>d__3::MoveNext()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0
+          },
+          "Branches": [
+            {
+              "Line": 45,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 198,
+              "EndOffset": 208,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<deleteEdgesGivenNodeId>d__4": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<deleteEdgesGivenNodeId>d__4::MoveNext()": {
+          "Lines": {
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "71": 0,
+            "72": 0
+          },
+          "Branches": [
+            {
+              "Line": 61,
+              "Offset": 391,
+              "EndOffset": 393,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 391,
+              "EndOffset": 401,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 586,
+              "EndOffset": 433,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 586,
+              "EndOffset": 591,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getAllEdges>d__5": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getAllEdges>d__5::MoveNext()": {
+          "Lines": {
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdge>d__6": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdge>d__6::MoveNext()": {
+          "Lines": {
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "97": 0,
+            "98": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdgesRelatedFromNodeId>d__8": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdgesRelatedFromNodeId>d__8::MoveNext()": {
+          "Lines": {
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.EdgeRepository/<getEdgesRelatedToNodeId>d__7": {
+        "System.Void iLit.Infrastructure.EdgeRepository/<getEdgesRelatedToNodeId>d__7::MoveNext()": {
+          "Lines": {
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\iLitContext.cs": {
+      "iLit.Infrastructure.iLitContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<iLit.Infrastructure.Node> iLit.Infrastructure.iLitContext::get_Nodes()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<iLit.Infrastructure.Edge> iLit.Infrastructure.iLitContext::get_Edges()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::.ctor()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.iLitContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<iLit.Infrastructure.iLitContext>)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Node.cs": {
+      "iLit.Infrastructure.Node": {
+        "System.Int32 iLit.Infrastructure.Node::get_ID()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String iLit.Infrastructure.Node::get_title()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\NodeRepository.cs": {
+      "iLit.Infrastructure.NodeRepository": {
+        "System.Void iLit.Infrastructure.NodeRepository::.ctor(iLit.Infrastructure.iLitContext)": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<createNewNode>d__2": {
+        "System.Void iLit.Infrastructure.NodeRepository/<createNewNode>d__2::MoveNext()": {
+          "Lines": {
+            "22": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "36": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<deleteNode>d__3": {
+        "System.Void iLit.Infrastructure.NodeRepository/<deleteNode>d__3::MoveNext()": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "54": 0,
+            "55": 0
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 212,
+              "EndOffset": 221,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 532,
+              "EndOffset": 534,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 532,
+              "EndOffset": 539,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<getAllNodes>d__4": {
+        "System.Void iLit.Infrastructure.NodeRepository/<getAllNodes>d__4::MoveNext()": {
+          "Lines": {
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0
+          },
+          "Branches": []
+        }
+      },
+      "iLit.Infrastructure.NodeRepository/<getNode>d__5": {
+        "System.Void iLit.Infrastructure.NodeRepository/<getNode>d__5::MoveNext()": {
+          "Lines": {
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\20211215134852_init.cs": {
+      "iLit.Infrastructure.Migrations.init": {
+        "System.Void iLit.Infrastructure.Migrations.init::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void iLit.Infrastructure.Migrations.init::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\20211215134852_init.Designer.cs": {
+      "iLit.Infrastructure.Migrations.init": {
+        "System.Void iLit.Infrastructure.Migrations.init::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "16": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "66": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\amand\\ITU\\BDSA_2021\\LitExplorer\\iLit.Infrastructure\\Migrations\\iLitContextModelSnapshot.cs": {
+      "iLit.Infrastructure.Migrations.iLitContextModelSnapshot": {
+        "System.Void iLit.Infrastructure.Migrations.iLitContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "14": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
