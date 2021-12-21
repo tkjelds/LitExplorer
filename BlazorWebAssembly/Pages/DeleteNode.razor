@@ -1,0 +1,55 @@
+@page "/deleteNode"
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+<h3>Choose an Article to delete</h3>
+
+    @if (nodes == null)
+        {
+        <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+            <thead>
+                <tr>
+                    <th>Articles</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var node in nodes)
+                {
+                    <tr>
+                        <td>@node.title </td><td><button class="btn btn-info" @onclick="@(() => deleteNode(@node))">Delete Article</button></td>
+                    </tr>
+                }
+            </tbody>
+            </table>
+        }
+
+    <p hidden="@(!isFailed)">Something went wrong :(</p>
+    <p hidden="@(!isSuccesful)">@deletedNode was succesfully deleted from the database.</p>
+
+
+@code {
+    private NodeDTO[]? nodes {get; set;}
+    private string deletedNode {get; set;} = "";
+    private bool isFailed {get; set;} = false;
+    private bool isSuccesful {get; set;} = false;
+    protected override async Task OnInitializedAsync()  
+        {
+            nodes = await Http.GetFromJsonAsync<NodeDTO[]>("api/Node");
+        }
+    private async Task deleteNode(NodeDTO node) {
+        Console.WriteLine("DeleteNode() has been invoked.");
+        var response = await Http.DeleteAsync($"api/Node/{node.id}");
+        if (response.IsSuccessStatusCode) {
+            deletedNode = node.title;
+            isSuccesful = true;
+            isFailed = false;
+        } else {
+            isFailed = true;
+            isSuccesful = false;
+        }
+    }
+}

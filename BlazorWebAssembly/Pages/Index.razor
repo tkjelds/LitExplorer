@@ -5,9 +5,14 @@
 <Circle/>
 <button class="addNewButtons" @onclick="ToggleNewNode">Add New Article</button>
 <button class="addNewButtons" @onclick="ToggleNewEdge">Add New Reference</button>
+<button class="addNewButtons" @onclick="ToggleNodeDelete">Delete Article</button>
+<button class="addNewButtons" @onclick="ToggleEdgeDelete">Delete Reference</button>
+<button class="addNewButtons" @onclick="Refresh">Refresh</button>
+
 <p hidden="@hideNewEdge"><AddNewEdge/></p>
 <p hidden="@hideNewNode"><AddNewNode/></p>
-
+<p hidden="@hideEdgeDelete"><DeleteEdge/></p>
+<p hidden="@hideNodeDelete"><DeleteNode/></p>
 <style>
     .addNewButtons {
         background-color: #b6b5b3;
@@ -20,18 +25,36 @@
 @code {
     private bool hideNewNode {get; set;} = true;
     private bool hideNewEdge {get; set;} = true;
+    private bool hideEdgeDelete {get; set;} = true;
+    private bool hideNodeDelete {get; set;} = true;
     private void ToggleNewNode() {
         hideNewNode = !hideNewNode;
         hideNewEdge = true;
+        hideNodeDelete = true;
+        hideEdgeDelete = true;
     }
     private void ToggleNewEdge() {
         hideNewEdge = !hideNewEdge;
         hideNewNode = true;
+        hideEdgeDelete = true;
+        hideNodeDelete = true;
     }
-    private void Create()
-    {
-        var uri = $"{NavigationManager.BaseUri}addNewNodeDebug";
 
-        NavigationManager.NavigateTo(uri);
+    private void ToggleNodeDelete() {
+        hideNodeDelete = !hideNodeDelete;
+        hideNewEdge = true;
+        hideNewNode = true;
+        hideEdgeDelete = true;
+    }
+
+    private void ToggleEdgeDelete() {
+        hideEdgeDelete = !hideEdgeDelete;
+        hideNewEdge = true;
+        hideNewNode = true;
+        hideNodeDelete = true;
+    }
+    private void Refresh()
+    {
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad:true);
     } 
 }
