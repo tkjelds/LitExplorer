@@ -6,16 +6,16 @@ namespace iLit.Core
     public interface INodeRepository
     {
 
-        /*Creates an ID and creates a new Node(title, ID).*/
+        /*Checks if the Node already exists and if it creates a new NodeDTO.*/
         Task<NodeDTO> createNewNode(NodeCreateDTO newNode);
 
-        /*Deletes the Node in the database with the corresponding ID that is given*/
+        /*Deletes the Node where INode.getID = ID.*/
         Task<Response> deleteNode(int ID);
 
-        /*Returns a list of Nodes.*/
+        /*Returns a list of all Nodes.*/
         Task<IReadOnlyCollection<NodeDTO>> getAllNodes();
 
-        /*Returns a Node.*/
+        /*Returns the NodeDTO of the Node with the given ID.*/
         Task<Option<NodeDTO>> getNode(int ID);
     }
 }
