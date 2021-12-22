@@ -33,7 +33,7 @@ Articles are represented as circles with their title inside the circle as text. 
 
 At the bottom there are four buttons:
 - Add Article: create and add an article to the database
-- Add Reference: create and add a reference between two articles in the database. The two buttons next to each article title used should be seen as "start" (left) and "end" (right) of an arrow; you "start" at the article which is referencing some article at the "end". At the bottom the currently selected articles are shown.
+- Add Reference: create and add a reference between two articles in the database. The two buttons next to each article title are used to choose the article referencing (left) and the article being referenced (right) in the given reference being added. At the bottom the currently selected articles are shown.
 - Delete Article: delete articles from database
 - Delete Reference: detele a reference between two articles
 All four buttons respond with feedback if the requests are succesful or not.
