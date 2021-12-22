@@ -33,7 +33,7 @@ namespace iLit.Infrastructure
             }
             catch(DbUpdateException)
             {
-                return null;//Kan håndteres af Edgecontroller. 
+                return null;
             }
             
         }

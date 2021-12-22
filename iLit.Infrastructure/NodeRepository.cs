@@ -30,7 +30,7 @@ namespace iLit.Infrastructure
             } 
             catch (DbUpdateException)
             {
-                return null; //kan håndteres af nodecontroller.
+                return null; 
             }
 
         }
