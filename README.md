@@ -37,7 +37,7 @@ At the bottom there are four buttons:
 All four buttons respond with feedback if the requests are succesful or not.
 
 <h3>Graphics</h3>
-The graphics don't automatically update when the database is updated. Either refresh the browser window manually by pressing F5 or use the refresh button at the upper-right corner.
+The graphics don't automatically update when the database is updated. Either refresh the browser window manually, e.g. by pressing F5, or use the refresh button at the upper-right corner of the page.
 
 
 
