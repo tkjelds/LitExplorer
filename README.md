@@ -10,7 +10,7 @@ password = Bdsa2021
 
 <h1>Running the program</h1>
 
-To run the program and setup database, run the PowerShell script "Start-applications.ps1" from inside the LitExplorer folder with docker running. 
+To run the program and setup the database, run the PowerShell script "Start-applications.ps1" from inside the LitExplorer folder with docker running. 
 This can be done by navigating to the folder in a PowerShell terminal (e.g. inside Visual Studio Code) and run the script by typing ".\Start-applications.ps1".
 If the script is succesful, you should be able to navigate to the given localhost port and interact with the Blazor Webassembly app. 
 
@@ -36,6 +36,7 @@ At the bottom there are four buttons:
 - Add Reference: create and add a reference between two articles in the database. The two buttons next to each article title are used to choose the article referencing (left) and the article being referenced (right) in the given reference being added. At the bottom the currently selected articles are shown.
 - Delete Article: delete articles from database
 - Delete Reference: detele a reference between two articles
+
 All four buttons respond with feedback if the requests are succesful or not.
 
 <h3>Graphics</h3>
