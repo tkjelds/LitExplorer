@@ -2,6 +2,7 @@
 BDSA2021 - Project: LitExplorer
 
 <h1>Login:</h1>
+Rasmus and Paolo should be invited and can use their ITU logins. If you are not Rasmus or Paolo or if it fails, use the following credentials:
 
 user = Guest@jacobsonneoutlook.onmicrosoft.com
 password = Bdsa2021
